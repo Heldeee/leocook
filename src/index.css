@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* avoid iOS bounce/rubber-band revealing white edges */
+  overscroll-behavior-y: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
