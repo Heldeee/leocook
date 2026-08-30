@@ -1,0 +1,10 @@
+import { useState } from 'react'
+import { Alert, Box, Button, Container, Paper, Stack, TextField, Typography } from '@mui/material'
+import { useUser } from '../context/UserContext'
+
+export default function Auth() {
+  const { signIn, signUp } = useUser()
+  const [register, setRegister] = useState(false); const [name, setName] = useState(''); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [error, setError] = useState(''); const [message, setMessage] = useState(''); const [busy, setBusy] = useState(false)
+  const submit = async (e) => { e.preventDefault(); setError(''); setMessage(''); setBusy(true); const { data, error: err } = register ? await signUp(name.trim(), email.trim(), password) : await signIn(email.trim(), password); setBusy(false); if (err) return setError(err.message); if (register && !data.session) setMessage('Vérifie ton e-mail pour confirmer ton inscription.') }
+  return <Container maxWidth="xs" sx={{ py: 8 }}><Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}><Typography variant="h4" sx={{ mb: 1 }}>Recettes de famille</Typography><Typography color="text.secondary" sx={{ mb: 3 }}>{register ? 'Crée ton espace familial.' : 'Connecte-toi pour accéder à tes recettes.'}</Typography><Box component="form" onSubmit={submit}><Stack spacing={2}>{register && <TextField required label="Prénom" value={name} onChange={(e) => setName(e.target.value)} />}<TextField required label="E-mail" type="email" value={email} onChange={(e) => setEmail(e.target.value)} /><TextField required label="Mot de passe" type="password" inputProps={{ minLength: 6 }} value={password} onChange={(e) => setPassword(e.target.value)} />{error && <Alert severity="error">{error}</Alert>}{message && <Alert severity="success">{message}</Alert>}<Button type="submit" variant="contained" disabled={busy}>{register ? 'Créer mon compte' : 'Se connecter'}</Button><Button onClick={() => { setRegister(!register); setError(''); setMessage('') }}>{register ? 'J’ai déjà un compte' : 'Créer un compte'}</Button></Stack></Box></Paper></Container>
+}

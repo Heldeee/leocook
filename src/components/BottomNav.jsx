@@ -1,15 +1,8 @@
-import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import {
   Paper,
   BottomNavigation,
   BottomNavigationAction,
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemText,
-  Typography,
-  Box,
 } from '@mui/material'
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -26,8 +19,7 @@ const ROUTE_FOR_VALUE = ['/', '/favorites', '/recipes/new', '/history']
 export default function BottomNav() {
   const location = useLocation()
   const navigate = useNavigate()
-  const { users, currentUser, selectUser } = useUser()
-  const [profileOpen, setProfileOpen] = useState(false)
+  const { currentUser, signOut } = useUser()
 
   const currentIndex = ROUTE_FOR_VALUE.findIndex((r) => r === location.pathname)
 
@@ -58,32 +50,11 @@ export default function BottomNav() {
           <BottomNavigationAction
             label={currentUser?.name ?? 'Profil'}
             icon={<PersonIcon />}
-            onClick={() => setProfileOpen(true)}
+            onClick={signOut}
           />
         </BottomNavigation>
       </Paper>
 
-      <Drawer anchor="bottom" open={profileOpen} onClose={() => setProfileOpen(false)}>
-        <Box sx={{ p: 2, pb: 'calc(env(safe-area-inset-bottom) + 16px)' }}>
-          <Typography variant="h6" sx={{ mb: 1, px: 1 }}>
-            Qui es-tu ?
-          </Typography>
-          <List>
-            {users.map((u) => (
-              <ListItemButton
-                key={u.id}
-                selected={u.id === currentUser?.id}
-                onClick={() => {
-                  selectUser(u.id)
-                  setProfileOpen(false)
-                }}
-              >
-                <ListItemText primary={u.name} />
-              </ListItemButton>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
     </>
   )
 }

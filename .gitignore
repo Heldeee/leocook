@@ -1,8 +1,12 @@
 node_modules
 dist
+*.env
 .env.local
 .env*.local
+.env.test
 *.log
 
-cypress/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
 supabase-project/

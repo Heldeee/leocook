@@ -1,0 +1,2 @@
+-- Accounts are created through Supabase Auth so that every test uses the same
+-- RLS code path as production. Cypress creates its disposable account itself.

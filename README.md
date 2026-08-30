@@ -9,7 +9,45 @@ App de recettes de cuisine familiale — React + MUI + Supabase.
 
 ## Mise en route
 
-### 1. Créer le projet Supabase
+### 1. Environnement local Supabase (Windows + Cypress)
+
+Installe et démarre Docker Desktop en mode **Linux containers**, puis vérifie que
+la commande `docker version` affiche aussi une section `Server`. Le CLI Supabase
+est déjà une dépendance de développement du projet.
+
+```powershell
+npm run supabase:start
+npx supabase status -o env
+```
+
+Copie `.env.test.example` vers `.env.test`, puis remplace `ANON_KEY` par la valeur
+imprimée. Pour l'utilisation quotidienne, tu peux faire la même chose dans
+`.env.local` :
+
+```dotenv
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=<ANON_KEY_local>
+```
+
+Le premier démarrage applique `supabase/migrations/` et les données de démo de
+`supabase/seed.sql`. Pour repartir d'une base propre :
+
+```powershell
+npm run supabase:reset
+```
+
+Dans un terminal, lance l'application avec les variables locales ; dans un autre,
+lance Cypress :
+
+```powershell
+npm run dev:local
+npm run cypress:run
+```
+
+Les tests E2E utilisent la recette et le profil `Alice Test` seedés. Avec le
+fichier `.env.test` local ci-dessus, ils ne contactent jamais le projet cloud.
+
+### 2. Créer le projet Supabase cloud
 
 1. Va sur [supabase.com](https://supabase.com) et crée un nouveau projet.
 2. Dans l'éditeur SQL du dashboard, colle et exécute le contenu de `supabase/schema.sql`.
@@ -20,7 +58,7 @@ App de recettes de cuisine familiale — React + MUI + Supabase.
    photos de recettes).
 4. Récupère `Project URL` et la clé `anon public` dans Project Settings > API.
 
-### 2. Configurer le front
+### 3. Configurer le front
 
 ```bash
 cp .env.example .env.local
@@ -29,7 +67,7 @@ npm install
 npm run dev
 ```
 
-### 3. Créer les utilisateurs et la famille (à la main, dans Supabase)
+### 4. Créer les utilisateurs et la famille (à la main, dans Supabase)
 
 Pas de formulaire d'inscription : tu crées tout depuis le Table Editor de Supabase.
 
