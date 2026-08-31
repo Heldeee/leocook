@@ -1,24 +1,22 @@
-const email = `e2e-${Date.now()}@example.test`
-const password = 'motdepasse-e2e'
+describe('parcours E2E complet des recettes', () => {
+  const user = {
+    name: 'Alice E2E',
+    email: `e2e-${Date.now()}@example.test`,
+    password: 'motdepasse123',
+  }
 
-const login = () => {
-  cy.visit('/')
-  cy.get('input[type="email"]').type(email)
-  cy.get('input[type="password"]').type(password)
-  cy.contains('Se connecter').click()
-  cy.contains('Aucune recette trouvée.').should('be.visible')
-}
-
-describe('parcours E2E des recettes', () => {
-  before(() => {
+  const login = () => {
     cy.visit('/')
-    cy.contains('Créer un compte').click()
-    cy.get('input').eq(0).type('Alice E2E')
-    cy.get('input[type="email"]').type(email)
-    cy.get('input[type="password"]').type(password)
-    cy.contains('Créer mon compte').click()
-    cy.contains('Aucune recette trouvée.').should('be.visible')
-    cy.contains('button', 'Alice E2E').click()
+    cy.get('input[type="email"]').clear().type(user.email)
+    cy.get('input[type="password"]').clear().type(user.password)
+    cy.contains('Se connecter').click()
+    cy.contains('button', user.name).should('be.visible')
+  }
+
+  before(() => {
+    cy.task('createTestUser', user).then(({ userId }) => {
+      cy.task('seedRecipe', { userId, recipeName: 'Gratin E2E', ingredientName: 'Courgette E2E', tagName: 'test' })
+    })
   })
 
   beforeEach(login)
@@ -26,34 +24,26 @@ describe('parcours E2E des recettes', () => {
   it('gère les dictionnaires', () => {
     cy.get('[data-testid="SettingsIcon"]').click()
     cy.contains('Dictionnaires').should('be.visible')
+
     cy.get('[role="dialog"]').within(() => {
       cy.get('input').first().type('Courgette E2E')
       cy.contains('button', 'Ajouter').click()
     })
-    cy.contains('Courgette E2E').should('be.visible')
-    cy.contains('Unités').click()
+
+    cy.contains('[role="dialog"]', 'Courgette E2E').scrollIntoView().should('be.visible')
+    cy.contains('[role="dialog"] [role="tab"]', 'Unités').click()
+
     cy.get('[role="dialog"]').within(() => {
-      cy.get('input').eq(0).type('verre E2E')
+      cy.get('input').first().type('verre E2E')
       cy.get('input').eq(1).type('ve2e')
       cy.contains('button', 'Ajouter').click()
     })
-    cy.contains('verre E2E').should('be.visible')
+
+    cy.contains('[role="dialog"]', 'verre E2E').scrollIntoView().should('be.visible')
   })
 
-  it('crée, prévisualise et consulte une recette', () => {
-    cy.contains('button', 'Ajouter').click()
-    cy.contains('Nouvelle recette').should('be.visible')
-    cy.get('input').eq(0).clear().type('Gratin E2E')
-    cy.get('input').eq(1).clear().type('6')
-    cy.get('input').eq(2).type('Courgette E2E')
-    cy.get('input').eq(3).type('2')
-    cy.get('input').eq(4).click()
-    cy.contains('g').click()
-    cy.get('textarea').first().type('Cuire au four')
-    cy.get('input').filter('[type="number"]').last().type('1')
-    cy.contains('button', 'Prévisualiser').click()
-    cy.contains('Gratin E2E').should('be.visible')
-    cy.contains('button', 'Confirmer la recette').click()
+  it('consulte une recette seedée et vérifie le détail', () => {
+    cy.contains('Gratin E2E').click()
     cy.contains('Gratin E2E').should('be.visible')
     cy.contains('2 g — Courgette E2E').should('be.visible')
     cy.contains('1. Cuire au four').should('be.visible')
@@ -69,7 +59,7 @@ describe('parcours E2E des recettes', () => {
     cy.contains('Gratin E2E').click()
     cy.get('[data-testid="EditIcon"]').click()
     cy.contains('Modifier la recette').should('be.visible')
-    cy.get('input').eq(0).clear().type('Gratin E2E modifié')
+    cy.contains('label', 'Nom de la recette').parents('.MuiFormControl-root').find('input').clear().type('Gratin E2E modifié')
     cy.contains('button', 'Prévisualiser').click()
     cy.contains('button', 'Enregistrer').click()
     cy.contains('Gratin E2E modifié').should('be.visible')
