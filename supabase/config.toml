@@ -1,4 +1,4 @@
-project_id = "leocook"
+project_id = "tfztwjsuulsdckpisodx"
 
 [api]
 enabled = true
@@ -23,5 +23,10 @@ file_size_limit = "50MiB"
 
 [auth]
 enabled = true
-site_url = "http://127.0.0.1:4173"
-additional_redirect_urls = ["http://localhost:4173", "http://127.0.0.1:4173"]
+site_url = "https://Heldeee.github.io/leocook/"
+additional_redirect_urls = [
+  "https://Heldeee.github.io/leocook",
+  "https://Heldeee.github.io/leocook/",
+  "http://localhost:4173",
+  "http://127.0.0.1:4173"
+]
