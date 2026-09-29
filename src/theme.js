@@ -24,7 +24,7 @@ export const theme = createTheme({
     divider: palette.line,
   },
   typography: {
-    fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
+    fontFamily: '"Trebuchet MS", "Aptos", sans-serif',
     h1: { fontFamily: '"Fraunces", "Georgia", serif', fontWeight: 600 },
     h2: { fontFamily: '"Fraunces", "Georgia", serif', fontWeight: 600 },
     h3: { fontFamily: '"Fraunces", "Georgia", serif', fontWeight: 600 },
@@ -40,7 +40,7 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
-        root: { borderRadius: 8 },
+        root: { borderRadius: 10, minHeight: 48, paddingInline: 16 },
       },
     },
     MuiChip: {
@@ -48,5 +48,8 @@ export const theme = createTheme({
         root: { borderRadius: 6 },
       },
     },
+    MuiIconButton: { styleOverrides: { root: { minWidth: 44, minHeight: 44 } } },
+    MuiInputBase: { styleOverrides: { input: { fontSize: 16 } } },
+    MuiBottomNavigationAction: { styleOverrides: { root: { minWidth: 0, padding: '8px 4px', flex: 1 }, label: { fontSize: '.75rem', '&.Mui-selected': { fontSize: '.75rem' } } } },
   },
 })

@@ -1,244 +1,90 @@
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Alert, Box, Button, Chip, Container, IconButton, Paper, Stack, Typography } from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import EditIcon from '@mui/icons-material/Edit'
-import {
-  useParams,
-  useNavigate,
-} from 'react-router-dom'
-import {
-  Container,
-  Typography,
-  Box,
-  Chip,
-  Stack,
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
-  IconButton,
-  Button,
-  Dialog,
-  DialogContent,
-  LinearProgress,
-} from '@mui/material'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import AddIcon from '@mui/icons-material/Add'
+import RemoveIcon from '@mui/icons-material/Remove'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutlined'
 import ScheduleIcon from '@mui/icons-material/Schedule'
-import { supabase } from '../lib/supabaseClient'
+import { getRecipe, isFavorite, toggleFavorite, recordView } from '../lib/catalogue'
+import { categoryFor, recipeMinutes } from '../lib/recipePresentation'
 import { useUser } from '../context/UserContext'
+import { formatMinutes } from '../utils/time'
 import RecipeImage from '../components/RecipeImage'
-import { totalMinutes, formatMinutes } from '../utils/time'
+import IngredientChecklist from '../components/IngredientChecklist'
+import CookingMode from '../components/CookingMode'
 
 export default function RecipeDetail() {
   const { id } = useParams()
-  const { currentUser: user } = useUser()
-  const [recipe, setRecipe] = useState(null)
-  const [ingredients, setIngredients] = useState([])
-  const [steps, setSteps] = useState([])
-  const [tags, setTags] = useState([])
-  const [isFavorite, setIsFavorite] = useState(false)
-  const [moulinexOpen, setMoulinexOpen] = useState(false)
+  const { editing } = useUser()
   const navigate = useNavigate()
-
-  const load = useCallback(async () => {
-    const { data: recipeData } = await supabase.from('recipes').select('*').eq('id', id).single()
-    setRecipe(recipeData)
-
-    const { data: ingredientRows } = await supabase
-      .from('recipe_ingredients')
-      .select('quantity, ingredients(name), units(abbreviation)')
-      .eq('recipe_id', id)
-    setIngredients(ingredientRows ?? [])
-
-    const { data: stepRows } = await supabase
-      .from('recipe_steps')
-      .select('*')
-      .eq('recipe_id', id)
-      .order('step_number')
-    setSteps(stepRows ?? [])
-
-    const { data: tagRows } = await supabase
-      .from('recipe_tags')
-      .select('tags(id, name)')
-      .eq('recipe_id', id)
-    setTags((tagRows ?? []).map((t) => t.tags))
-
-    if (user) {
-      const { data: favRow } = await supabase
-        .from('favorites')
-        .select('*')
-        .eq('user_id', user.id)
-        .eq('recipe_id', id)
-        .maybeSingle()
-      setIsFavorite(!!favRow)
-
-      // log this view for the history page
-      await supabase.from('recipe_views').insert({ user_id: user.id, recipe_id: id })
-    }
-  }, [id, user])
-
+  const [recipe, setRecipe] = useState(null)
+  const [error, setError] = useState('')
+  const [favorite, setFavorite] = useState(false)
+  const [servings, setServings] = useState(1)
+  const [checked, setChecked] = useState([])
+  const [cooking, setCooking] = useState(false)
   useEffect(() => {
-    load()
-  }, [load])
-
-  const toggleFavorite = async () => {
-    if (!user) return
-    if (isFavorite) {
-      await supabase.from('favorites').delete().eq('user_id', user.id).eq('recipe_id', id)
-    } else {
-      await supabase.from('favorites').insert({ user_id: user.id, recipe_id: id })
-    }
-    setIsFavorite(!isFavorite)
-  }
-
-  if (!recipe) return null
-
-  return (
-    <Container maxWidth="md" disableGutters sx={{ py: 0 }}>
-      <RecipeImage src={recipe.image_url} name={recipe.name} height={220} />
-
-      <Box sx={{ px: { xs: 2, sm: 3 }, py: 3 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <Typography variant="h4" sx={{ wordBreak: 'break-word' }}>
-            {recipe.name}
-          </Typography>
-          <IconButton onClick={toggleFavorite} color="secondary">
-            {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-          </IconButton>
-          <IconButton
-            onClick={() =>
-              navigate(`/recipes/${id}/edit`)
-            }
-          >
-            <EditIcon />
-          </IconButton>
+    let alive = true
+    getRecipe(id).then(data => {
+      if (!alive) return
+      setRecipe(data); setServings(data.servings); setFavorite(isFavorite(id)); setError('')
+      try { const saved = JSON.parse(sessionStorage.getItem(`kousine.ingredients.${id}`) ?? '[]'); setChecked(Array.isArray(saved) ? saved : []) } catch { setChecked([]) }
+      recordView(id)
+    }).catch(error => { if (alive) setError(error.message) })
+    return () => { alive = false }
+  }, [id])
+  const checkIngredient = ingredientId => setChecked(current => {
+    const next = current.includes(ingredientId) ? current.filter(id => id !== ingredientId) : [...current, ingredientId]
+    sessionStorage.setItem(`kousine.ingredients.${id}`, JSON.stringify(next))
+    return next
+  })
+  const changeServings = number => { setServings(number); setChecked([]); sessionStorage.removeItem(`kousine.ingredients.${id}`) }
+  if (error) return <Container sx={{ py: 4 }}><Alert severity="error">{error}</Alert><Button onClick={() => navigate('/')}>Retour aux recettes</Button></Container>
+  if (!recipe || recipe.id !== id) return <Container sx={{ py: 4 }}>Chargement…</Container>
+  const category = categoryFor(recipe.category), minutes = recipeMinutes({ ...recipe, recipe_steps: recipe.steps }), ratio = servings / recipe.servings
+  return <Container maxWidth="lg" sx={{ py: { xs: 2, sm: 3 }, px: { xs: 2, sm: 3 } }}>
+    <Stack direction="row" sx={{ mb: 2, justifyContent: 'space-between', alignItems: 'center' }}>
+      <Button startIcon={<ArrowBackIcon />} onClick={() => navigate('/')}>Recettes</Button>
+      <Stack direction="row" spacing={.5}><IconButton aria-label={favorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} aria-pressed={favorite} onClick={() => setFavorite(toggleFavorite(id))} color="primary">{favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}</IconButton>{editing && <IconButton aria-label="Modifier la recette" onClick={() => navigate(`/recipes/${id}/edit`)}><EditIcon /></IconButton>}</Stack>
+    </Stack>
+    {recipe.image_url && <Box sx={{ mb: 3 }}><RecipeImage src={recipe.image_url} name={recipe.name} height={{ xs: 200, sm: 300 }} borderRadius={3} /></Box>}
+    <Box component="header" sx={{ mb: 3, maxWidth: 780 }}>
+      {category && <Typography variant="overline" color="primary" sx={{ letterSpacing: '.1em' }}>{category.title}</Typography>}
+      <Typography variant="h4" component="h1" sx={{ fontSize: { xs: '2rem', sm: '2.7rem' }, lineHeight: 1.2, overflowWrap: 'anywhere', mb: 1.5 }}>{recipe.name}</Typography>
+      {recipe.description && <Typography color="text.secondary" sx={{ fontSize: '1.05rem', lineHeight: 1.7 }}>{recipe.description}</Typography>}
+      <Stack direction="row" spacing={1} sx={{ mt: 2, flexWrap: 'wrap', gap: 1, alignItems: 'center' }}>
+        <Stack direction="row" spacing={.5} alignItems="center"><ScheduleIcon sx={{ fontSize: 18 }} /><Typography variant="body2">{minutes != null ? formatMinutes(minutes) : recipe.category === 'compotes' ? '10 min de préparation + cycle appareil' : 'Durée selon les étapes'}</Typography></Stack>
+        {recipe.tags.map(tag => <Chip key={tag.id} label={tag.name} size="small" variant="outlined" />)}
+      </Stack>
+      {recipe.prep_minutes != null && recipe.cook_minutes != null && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>Préparation : {recipe.prep_minutes} min · Cuisson : {recipe.cook_minutes} min · Repos éventuel indiqué dans les étapes.</Typography>}
+    </Box>
+    <Button variant="contained" size="large" fullWidth startIcon={<PlayCircleOutlineIcon />} disabled={!recipe.steps.length} onClick={() => setCooking(true)} sx={{ mb: 3, py: 1.5, maxWidth: { sm: 350 } }}>Mode cuisine</Button>
+    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', sm: '280px minmax(0, 1fr)', md: '320px minmax(0, 1fr)' }, gap: { xs: 3, sm: 3, md: 4 }, alignItems: 'start' }}>
+      <Paper component="section" aria-labelledby="ingredients-heading" variant="outlined" sx={{ p: { xs: 2, sm: 3 }, position: { sm: 'sticky' }, top: { sm: 20 }, borderRadius: 3 }}>
+        <Typography id="ingredients-heading" component="h2" variant="h5">Ingrédients</Typography>
+        <Stack direction="row" sx={{ mt: 2, mb: 1, p: .5, bgcolor: 'background.default', borderRadius: 2, alignItems: 'center', justifyContent: 'space-between' }}>
+          <IconButton aria-label="Réduire les portions" onClick={() => changeServings(servings - 1)} disabled={servings <= 1}><RemoveIcon /></IconButton>
+          <Typography aria-live="polite" sx={{ fontWeight: 650 }}>{servings} portion{servings > 1 ? 's' : ''}</Typography>
+          <IconButton aria-label="Augmenter les portions" onClick={() => changeServings(servings + 1)} disabled={servings >= 24}><AddIcon /></IconButton>
         </Stack>
-
-        <Stack direction="row" spacing={1} sx={{ my: 2, flexWrap: 'wrap', gap: 1 }}>
-          {tags.map((tag) => (
-            <Chip key={tag.id} label={tag.name} size="small" />
-          ))}
+        {ratio !== 1 && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>Quantités adaptées. Les temps, le moule et les repères de l’appareil ne changent pas automatiquement. Adapte les œufs fractionnés.</Typography>}
+        <IngredientChecklist ingredients={recipe.ingredients} ratio={ratio} checked={checked} onToggle={checkIngredient} />
+        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 2 }}>{checked.length} / {recipe.ingredients.length} préparés · touche pour cocher</Typography>
+      </Paper>
+      <Box component="section" aria-labelledby="steps-heading" sx={{ minWidth: 0 }}>
+        <Typography id="steps-heading" component="h2" variant="h5" sx={{ mb: 2 }}>Étapes</Typography>
+        <Stack component="ol" spacing={1.5} sx={{ listStyle: 'none', p: 0, m: 0 }}>
+          {recipe.steps.map((step, index) => <Paper component="li" variant="outlined" key={step.id} sx={{ p: { xs: 2, sm: 3 }, borderRadius: 3 }}>
+            <Stack direction="row" spacing={1.5} alignItems="flex-start"><Box sx={{ flexShrink: 0, width: 30, height: 30, display: 'grid', placeItems: 'center', bgcolor: 'primary.main', color: 'primary.contrastText', borderRadius: '50%', fontWeight: 650 }}>{index + 1}</Box><Box sx={{ minWidth: 0 }}><Typography sx={{ lineHeight: 1.8, overflowWrap: 'anywhere' }}>{step.instruction}</Typography>{step.duration_seconds > 0 && <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>Minuteur disponible : {formatMinutes(Math.ceil(step.duration_seconds / 60))}</Typography>}</Box></Stack>
+          </Paper>)}
         </Stack>
-
-        <Stack direction="row" spacing={2} sx={{ mb: 3 }}>
-          <Typography color="text.secondary">{recipe.servings} portions</Typography>
-          {totalMinutes(steps) > 0 && (
-            <Stack direction="row" spacing={0.5} alignItems="center">
-              <ScheduleIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-              <Typography color="text.secondary">{formatMinutes(totalMinutes(steps))}</Typography>
-            </Stack>
-          )}
-        </Stack>
-
-        <Typography variant="h6" sx={{ mb: 1 }}>
-          Ingrédients
-        </Typography>
-        <List dense>
-          {ingredients.map((row, i) => (
-            <ListItem key={i} disableGutters>
-              <ListItemText primary={`${row.quantity} ${row.units?.abbreviation} — ${row.ingredients?.name}`} />
-            </ListItem>
-          ))}
-        </List>
-
-        <Divider sx={{ my: 3 }} />
-
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ mb: 1 }}>
-          <Typography variant="h6">Étapes</Typography>
-          <Button
-            startIcon={<PlayCircleOutlineIcon />}
-            variant="contained"
-            onClick={() => setMoulinexOpen(true)}
-            disabled={steps.length === 0}
-          >
-            Mode guidé
-          </Button>
-        </Stack>
-        <List>
-          {steps.map((step) => (
-            <ListItem key={step.id} alignItems="flex-start" disableGutters>
-              <ListItemText
-                primary={`${step.step_number}. ${step.instruction}`}
-                secondary={step.duration_seconds ? `${Math.round(step.duration_seconds / 60)} min` : null}
-              />
-            </ListItem>
-          ))}
-        </List>
-
-        <MoulinexDialog open={moulinexOpen} onClose={() => setMoulinexOpen(false)} steps={steps} />
+        {recipe.notes && <Alert severity="info" icon={false} sx={{ mt: 3, lineHeight: 1.7 }}><Typography sx={{ fontWeight: 650, mb: .5 }}>Bon à savoir</Typography>{recipe.notes}</Alert>}
       </Box>
-    </Container>
-  )
-}
-
-// --- "Moulinex mode": one step at a time, with an optional countdown timer ---
-function MoulinexDialog({ open, onClose, steps }) {
-  const [index, setIndex] = useState(0)
-  const [secondsLeft, setSecondsLeft] = useState(null)
-  const intervalRef = useRef(null)
-
-  const step = steps[index]
-
-  useEffect(() => {
-    if (!open) return
-    setIndex(0)
-  }, [open])
-
-  useEffect(() => {
-    clearInterval(intervalRef.current)
-    setSecondsLeft(step?.duration_seconds ?? null)
-    if (step?.duration_seconds) {
-      intervalRef.current = setInterval(() => {
-        setSecondsLeft((s) => {
-          if (s <= 1) {
-            clearInterval(intervalRef.current)
-            return 0
-          }
-          return s - 1
-        })
-      }, 1000)
-    }
-    return () => clearInterval(intervalRef.current)
-  }, [step])
-
-  if (!step) return null
-
-  const progress = step.duration_seconds ? ((step.duration_seconds - secondsLeft) / step.duration_seconds) * 100 : 0
-
-  return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-      <DialogContent sx={{ py: 5, textAlign: 'center' }}>
-        <Typography variant="overline" color="text.secondary">
-          Étape {index + 1} / {steps.length}
-        </Typography>
-        <Typography variant="h5" sx={{ my: 3 }}>
-          {step.instruction}
-        </Typography>
-
-        {step.duration_seconds != null && (
-          <Box sx={{ my: 3 }}>
-            <Typography variant="h2">
-              {Math.floor(secondsLeft / 60)}:{String(secondsLeft % 60).padStart(2, '0')}
-            </Typography>
-            <LinearProgress variant="determinate" value={progress} sx={{ mt: 2, height: 8, borderRadius: 4 }} />
-          </Box>
-        )}
-
-        <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 4 }}>
-          <Button disabled={index === 0} onClick={() => setIndex((i) => i - 1)}>
-            Précédent
-          </Button>
-          {index < steps.length - 1 ? (
-            <Button variant="contained" onClick={() => setIndex((i) => i + 1)}>
-              Étape suivante
-            </Button>
-          ) : (
-            <Button variant="contained" color="secondary" onClick={onClose}>
-              Terminé
-            </Button>
-          )}
-        </Stack>
-      </DialogContent>
-    </Dialog>
-  )
+    </Box>
+    {cooking && <CookingMode key={recipe.id} recipe={recipe} ratio={ratio} checked={checked} onToggle={checkIngredient} onClose={() => setCooking(false)} />}
+  </Container>
 }

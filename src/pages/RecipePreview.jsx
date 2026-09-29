@@ -51,7 +51,7 @@ export default function RecipePreview() {
 
     const edit = () => {
         if (editMode) {
-            navigate(`/recipes/${recipe.id}/edit`)
+            navigate(`/recipes/${recipe.id}/edit`, { state: { recipe } })
         } else {
             navigate('/recipes/new', {
                 state: {

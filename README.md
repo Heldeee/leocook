@@ -1,115 +1,73 @@
-# Recettes de famille
+# Kousine — catalogue de recettes
 
-App de recettes de cuisine familiale — React + MUI + Supabase.
+Front React + MUI hébergé sur GitHub Pages. Le catalogue est stocké dans public/data/catalogue.json : aucune base Supabase, aucun compte utilisateur et aucune famille ne sont nécessaires pour utiliser l’app.
 
-## Stack
+## Démarrer
 
-- **Front** : React (Vite) + MUI, déployé sur GitHub Pages
-- **Back** : Supabase (Postgres + Auth + Storage), Row Level Security pour toute la logique de permissions
-
-## Mise en route
-
-### 1. Environnement local Supabase (Windows + Cypress)
-
-Installe et démarre Docker Desktop en mode **Linux containers**, puis vérifie que
-la commande `docker version` affiche aussi une section `Server`. Le CLI Supabase
-est déjà une dépendance de développement du projet.
+Node.js 24 et les dépendances du projet :
 
 ```powershell
-npm run supabase:start
-npx supabase status -o env
-```
-
-Copie `.env.test.example` vers `.env.test`, puis remplace `ANON_KEY` par la valeur
-imprimée. Pour l'utilisation quotidienne, tu peux faire la même chose dans
-`.env.local` :
-
-```dotenv
-VITE_SUPABASE_URL=http://127.0.0.1:54321
-VITE_SUPABASE_ANON_KEY=<ANON_KEY_local>
-```
-
-Le premier démarrage applique `supabase/migrations/` et les données de démo de
-`supabase/seed.sql`. Pour repartir d'une base propre :
-
-```powershell
-npm run supabase:reset
-```
-
-Dans un terminal, lance l'application avec les variables locales ; dans un autre,
-lance Cypress :
-
-```powershell
+npm ci
 npm run dev:local
+```
+
+Ouvrir http://127.0.0.1:4173/#/. Aucun fichier .env n’est nécessaire.
+
+## Catalogue et usage mobile
+
+31 recettes : la recette du backup et **30 recettes originales**, réparties en 6 gâteaux airfryer, 6 compotes, 6 plats simples, 6 petites pâtisseries et 6 salades. Recherche par ingrédients sans accents, cinq catégories, filtre 30 minutes, portions ajustables et ingrédients cochables.
+
+Le mode cuisine présente une étape à la fois avec un minuteur manuel : démarrage, pause, reprise et réinitialisation. Sur tablette, ingrédients et étapes se lisent côte à côte. Les recettes airfryer sont à adapter à l’appareil ; les compotes attendent la référence exacte du Tefal pour fixer le cycle. Les températures et temps proposés n’ont pas été testés en cuisine.
+
+L’analyse et les limites de validation sont détaillées dans [le bilan UX](docs/ux-audit.md).
+
+## Ajouter ou modifier une recette
+
+1. Ouvrir **Catalogue** et activer le mode édition.
+2. Utiliser **Ajouter**, ou le bouton d’édition d’une recette.
+3. Prévisualiser et confirmer. La recette est enregistrée dans un **brouillon local**, conservé après rechargement sur le même navigateur.
+4. Depuis **Catalogue**, exporter le JSON ou publier sur GitHub.
+
+Les favoris et l’historique restent sur cet appareil. Les autres visiteurs ne voient pas les brouillons. Le mode édition permet de préparer des changements localement, sans accorder de droits sur le dépôt. L’effacement des données du navigateur supprime ces brouillons : exporter avant de changer d’appareil ou de nettoyer le navigateur.
+
+## Publier depuis le front
+
+Le dépôt proposé est Heldeee/leocook et la branche main. Créer personnellement un token GitHub à permissions fines, limité à ce dépôt, avec **Contents: Read and write**, et une expiration courte. Il peut nécessiter une approbation selon les règles du dépôt. Le saisir uniquement dans l’écran Catalogue. Aucun token n’est intégré au build, enregistré dans localStorage, ni envoyé dans le catalogue. Il reste dans la mémoire de cet écran et est effacé après une tentative ou lorsqu’on quitte l’écran.
+
+Le bouton **Publier sur GitHub** effectue une lecture et un commit du fichier de catalogue via l’API GitHub. Le SHA du fichier et la version d’origine du brouillon empêchent d’écraser une modification faite ailleurs. En cas de conflit ou de refus, le brouillon reste disponible pour export. Exporter, abandonner le brouillon, puis recharger le site après le dernier déploiement avant de reprendre les modifications.
+
+La publication sur main déclenche .github/workflows/deploy.yml. Configurer GitHub Pages avec **GitHub Actions** comme source de déploiement. Les anciens secrets Supabase ne sont plus utilisés. Les routes utilisent un hash (#/recipes/...) pour fonctionner après rechargement sur GitHub Pages. Si le nom du dépôt change, adapter la base dans vite.config.js.
+
+Alternative sans token dans le navigateur : exporter catalogue.json, remplacer public/data/catalogue.json dans le dépôt, puis committer et pousser avec Git.
+
+**Tout le catalogue publié est public**, y compris les photos intégrées. La publication réelle et les permissions GitHub n’ont pas été testées avec un compte réel ; les requêtes sont simulées dans les tests.
+
+## Photos
+
+Les nouvelles photos JPEG, PNG, WebP ou GIF sont intégrées au JSON, avec une limite de 750 Ko par photo. La publication depuis le front est limitée à 900 Ko pour le catalogue complet. Cela convient à un petit catalogue ; pour davantage de photos, placer des fichiers optimisés dans public/images/ et référencer images/nom.webp dans image_url, puis publier avec Git. Les anciennes URLs Supabase, si présentes dans un autre export, doivent être remplacées : une sauvegarde SQL n’embarque pas les fichiers des buckets.
+
+## Backup importé
+
+Le backup local fourni a permis de récupérer **1 recette**, 8 ingrédients, 9 unités, 4 tags, 1 relation ingrédient, 1 étape et 1 relation tag. Aucune photo n’est référencée. Les identifiants d’auteurs, familles, emails, comptes, sessions et données d’authentification sont exclus du catalogue public. Le dossier backup/ est ignoré par Git et sa sauvegarde originale reste intacte.
+
+Pour convertir un autre dump PostgreSQL texte avec des sections COPY :
+
+```powershell
+npm run import:backup -- backup/mon-export.backup.gz public/data/catalogue-import.json
+```
+
+Le script accepte du SQL texte, compressé gzip ou non. Il refuse d’écraser un fichier existant. Vérifier le fichier produit avant de remplacer le catalogue actif. Les dumps PostgreSQL binaires ne sont pas pris en charge.
+
+## Vérifier et construire
+
+```powershell
+npm test
+npm run lint
+npm run build
+# Avec npm run dev:local lancé dans un autre terminal :
 npm run cypress:run
 ```
 
-Les tests E2E utilisent la recette et le profil `Alice Test` seedés. Avec le
-fichier `.env.test` local ci-dessus, ils ne contactent jamais le projet cloud.
+Les tests couvrent l’import sans données privées, les relations, la création/édition atomique, la persistance, les favoris, les conflits et erreurs GitHub, ainsi que les parcours navigateur. Les scénarios historiques Supabase restent dans cypress/e2e/ mais sont exclus du scénario actif. Les anciens fichiers SQL sont conservés comme archives ; l’ancien README est dans docs/legacy-supabase.md.
 
-### 2. Créer le projet Supabase cloud
-
-1. Va sur [supabase.com](https://supabase.com) et crée un nouveau projet.
-2. Dans l'éditeur SQL du dashboard, colle et exécute le contenu de `supabase/schema.sql`.
-   Ça crée toutes les tables et une poignée d'unités de mesure de base.
-   **Pas d'authentification** : la RLS est désactivée, l'accès est géré à la main
-   en ne partageant l'URL/la clé anon qu'avec les gens de confiance.
-3. Dans **Storage**, crée un bucket public nommé `recipe-images` (utilisé pour les
-   photos de recettes).
-4. Récupère `Project URL` et la clé `anon public` dans Project Settings > API.
-
-### 3. Configurer le front
-
-```bash
-cp .env.example .env.local
-# remplis VITE_SUPABASE_URL et VITE_SUPABASE_ANON_KEY dans .env.local
-npm install
-npm run dev
-```
-
-### 4. Créer les utilisateurs et la famille (à la main, dans Supabase)
-
-Pas de formulaire d'inscription : tu crées tout depuis le Table Editor de Supabase.
-
-1. Table `users` : une ligne par personne (juste `name`, `email` optionnel).
-2. Table `families` : une ligne (ex: "Famille Dupont").
-3. Table `family_members` : pour chaque personne, une ligne reliant son `user_id`
-   à la `family_id`, avec `role = 'owner'` ou `'member'`.
-4. Recharge l'app : chaque personne se choisit dans le menu déroulant en haut à
-   droite ("Qui es-tu ?") — son choix est mémorisé sur son navigateur.
-
-## Déploiement sur GitHub Pages
-
-```bash
-npm run build
-```
-
-Ça génère `dist/`. Options de déploiement :
-
-- **Manuel** : pousse le contenu de `dist/` sur la branche `gh-pages` (ex. via
-  le package `gh-pages`, ou une GitHub Action `actions/deploy-pages`).
-- Pense à mettre à jour `base` dans `vite.config.js` avec le vrai nom de ton repo
-  GitHub avant de builder (`/mon-repo/`), sinon les assets ne se chargeront pas
-  correctement une fois déployés.
-- Les variables `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` doivent être
-  disponibles au moment du `build` (secrets GitHub Actions si tu automatises).
-
-## Fonctionnalités déjà en place
-
-- Auth email/mot de passe (via Supabase Auth)
-- Liste des recettes avec recherche par mot-clé + filtre par tag
-- Détail de recette : ingrédients, étapes, tags
-- **Mode guidé ("à la Moulinex")** : une étape à la fois, avec minuteur si l'étape en a un
-- Favoris (ajout/suppression, page dédiée)
-- Historique de consultation
-- Création de recette : ingrédients dynamiques (existants ou créés à la volée),
-  étapes avec minuteur optionnel, tags (existants ou créés à la volée), upload photo
-- Visibilité par recette : privée à la famille ou publique à toute l'app (RLS)
-
-## Pistes pour la suite
-
-- UI de gestion des familles (créer / inviter / quitter)
-- Édition et suppression de recette (le formulaire actuel ne gère que la création)
-- Scaling des quantités selon le nombre de portions choisi
-- Dictionnaire de traduction (mentionné dans le TODO initial, pas prioritaire)
-- Pagination / infinite scroll sur la liste si le nombre de recettes grandit
+`npm run catalogue:enrich` ajoute les recettes définies dans `scripts/recipes.mjs` sans doublon et sans remplacer une recette déjà présente. Pour modifier une recette existante, utiliser le front ou le JSON actif. Les sauvegardes du catalogue précédent restent dans `backup/`, hors Git.

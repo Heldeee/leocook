@@ -1,0 +1,75 @@
+describe('Catalogue sans Supabase', () => {
+  beforeEach(() => {
+    cy.intercept('https://fonts.googleapis.com/**', { body: '' })
+    cy.intercept('https://fonts.gstatic.com/**', { body: '' })
+    cy.visit('/#/', { onBeforeLoad(win) { win.localStorage.clear(); win.sessionStorage.clear() } })
+  })
+
+  it('consulte une recette et conserve favoris et historique sans compte', () => {
+    cy.contains('test').click()
+    cy.contains('Ingrédients').should('be.visible')
+    cy.get('[aria-label="Ajouter aux favoris"]').click()
+    cy.contains('button', 'Favoris').click()
+    cy.contains('test').should('be.visible')
+    cy.contains('button', 'Historique').click()
+    cy.contains('test').should('be.visible')
+    cy.reload()
+    cy.contains('test').should('be.visible')
+  })
+
+  it('crée puis modifie une recette, sans doublon en StrictMode, et conserve le brouillon', () => {
+    cy.contains('button', 'Catalogue').click()
+    cy.contains('Activer le mode édition').click()
+    cy.contains('button', 'Ajouter').click()
+    cy.contains('label', 'Nom de la recette').parent().find('input').type('Soupe maison')
+    cy.contains('label', 'Instruction').parent().find('textarea').first().type('Faire mijoter.')
+    cy.contains('button', 'Prévisualiser').click()
+    cy.contains('button', 'Modifier').click()
+    cy.contains('label', 'Nom de la recette').parent().find('input').should('have.value', 'Soupe maison')
+    cy.contains('button', 'Prévisualiser').click()
+    cy.contains('button', 'Confirmer la recette').click()
+    cy.contains('h1', 'Soupe maison').should('be.visible')
+    cy.get('[aria-label="Modifier la recette"]').click()
+    cy.contains('label', 'Nom de la recette').parent().find('input').clear().type('Soupe du soir')
+    cy.contains('button', 'Prévisualiser').click()
+    cy.contains('button', 'Enregistrer').click()
+    cy.contains('h1', 'Soupe du soir').should('be.visible')
+    cy.reload()
+    cy.contains('h1', 'Soupe du soir').should('be.visible')
+    cy.window().then(win => {
+      const saved = JSON.parse(win.localStorage.getItem('leocook.catalogue-draft.v1'))
+      expect(saved.catalogue.recipes.filter(recipe => recipe.name.startsWith('Soupe'))).to.have.length(1)
+    })
+  })
+
+  it('publie explicitement avec GitHub simulé et efface le token après publication', () => {
+    cy.request('/data/catalogue.json').then(({ body: catalogue }) => {
+      cy.intercept('GET', 'https://api.github.com/repos/Heldeee/leocook/contents/public/data/catalogue.json*', {
+        body: { sha: 'test-sha', content: btoa(unescape(encodeURIComponent(JSON.stringify(catalogue)))) },
+      }).as('githubRead')
+    })
+    cy.intercept('PUT', 'https://api.github.com/repos/Heldeee/leocook/contents/public/data/catalogue.json', request => {
+      expect(request.body.sha).to.equal('test-sha')
+      expect(request.body.branch).to.equal('main')
+      expect(request.headers.authorization).to.equal('Bearer fake-local-token')
+      request.reply({ body: { commit: { html_url: 'https://github.com/Heldeee/leocook/commit/test' } } })
+    }).as('githubWrite')
+    cy.contains('button', 'Catalogue').click()
+    cy.contains('Activer le mode édition').click()
+    cy.contains('button', 'Ajouter').click()
+    cy.contains('label', 'Nom de la recette').parent().find('input').type('Recette publiée')
+    cy.contains('button', 'Prévisualiser').click()
+    cy.contains('button', 'Confirmer la recette').click()
+    cy.contains('h1', 'Recette publiée').should('be.visible')
+    cy.contains('button', 'Catalogue').click()
+    cy.get('input[type="password"]').type('fake-local-token', { log: false })
+    cy.contains('button', 'Publier sur GitHub').click()
+    cy.wait('@githubRead'); cy.wait('@githubWrite')
+    cy.contains('Catalogue enregistré sur GitHub').should('be.visible')
+    cy.get('input[type="password"]').should('have.value', '')
+    cy.window().then(win => {
+      expect(win.localStorage.getItem('leocook.catalogue-draft.v1')).to.equal(null)
+      expect(JSON.stringify(win.localStorage)).not.to.contain('fake-local-token')
+    })
+  })
+})

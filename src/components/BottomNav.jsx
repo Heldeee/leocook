@@ -8,20 +8,20 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import HistoryIcon from '@mui/icons-material/History'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-import PersonIcon from '@mui/icons-material/Person'
+import SettingsIcon from '@mui/icons-material/Settings'
 import { useUser } from '../context/UserContext'
 
 // height reserved at the bottom of the page so content never hides behind the nav
 export const BOTTOM_NAV_HEIGHT = 68
 
-const ROUTE_FOR_VALUE = ['/', '/favorites', '/recipes/new', '/history']
+const ROUTE_FOR_VALUE = ['/', '/favorites', '/recipes/new', '/history', '/catalogue']
 
 export default function BottomNav() {
   const location = useLocation()
   const navigate = useNavigate()
-  const { currentUser, signOut } = useUser()
+  const { editing } = useUser()
 
-  const currentIndex = ROUTE_FOR_VALUE.findIndex((r) => r === location.pathname)
+  const currentIndex = location.pathname.startsWith('/recipes/') && location.pathname !== '/recipes/new' ? 0 : ROUTE_FOR_VALUE.findIndex((r) => r === location.pathname)
 
   return (
     <>
@@ -41,16 +41,17 @@ export default function BottomNav() {
         <BottomNavigation
           value={currentIndex === -1 ? false : currentIndex}
           showLabels
-          sx={{ height: BOTTOM_NAV_HEIGHT, bgcolor: 'background.paper' }}
+          sx={{ height: BOTTOM_NAV_HEIGHT, bgcolor: 'background.paper', maxWidth: 1000, mx: 'auto' }}
         >
           <BottomNavigationAction label="Recettes" icon={<RestaurantMenuIcon />} onClick={() => navigate('/')} />
           <BottomNavigationAction label="Favoris" icon={<FavoriteIcon />} onClick={() => navigate('/favorites')} />
-          <BottomNavigationAction label="Ajouter" icon={<AddCircleIcon />} onClick={() => navigate('/recipes/new')} />
-          <BottomNavigationAction label="Historique" icon={<HistoryIcon />} onClick={() => navigate('/history')} />
+          {editing && <BottomNavigationAction value={2} label="Ajouter" icon={<AddCircleIcon />} onClick={() => navigate('/recipes/new')} />}
+          <BottomNavigationAction value={3} label="Historique" icon={<HistoryIcon />} onClick={() => navigate('/history')} />
           <BottomNavigationAction
-            label={currentUser?.name ?? 'Profil'}
-            icon={<PersonIcon />}
-            onClick={signOut}
+            value={4}
+            label="Catalogue"
+            icon={<SettingsIcon />}
+            onClick={() => navigate('/catalogue')}
           />
         </BottomNavigation>
       </Paper>

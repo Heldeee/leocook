@@ -16,3 +16,10 @@ img {
   max-width: 100%;
   display: block;
 }
+
+:focus-visible { outline: 3px solid #B76A36; outline-offset: 3px; }
+html { scroll-padding-top: 150px; }
+button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

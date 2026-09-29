@@ -19,12 +19,14 @@ import {
 import DeleteIcon from '@mui/icons-material/Delete'
 import AddIcon from '@mui/icons-material/Add'
 
-import { supabase } from '../lib/supabaseClient'
+import { referenceData, addReference, deleteReference } from '../lib/catalogue'
+import { useUser } from '../context/UserContext'
 
 export default function DictionaryDialog({
     open,
     onClose,
 }) {
+    const { editing } = useUser()
     const [tab, setTab] = useState(0)
 
     const [ingredients, setIngredients] =
@@ -42,28 +44,9 @@ export default function DictionaryDialog({
         useState('')
 
     const load = async () => {
-        const [
-            { data: ingredientData },
-            { data: unitData },
-        ] = await Promise.all([
-            supabase
-                .from('ingredients')
-                .select('id, name')
-                .order('name'),
-
-            supabase
-                .from('units')
-                .select(
-                    'id, name, abbreviation'
-                )
-                .order('name'),
-        ])
-
-        setIngredients(
-            ingredientData ?? []
-        )
-
-        setUnits(unitData ?? [])
+        const data = await referenceData()
+        setIngredients(data.ingredients)
+        setUnits(data.units)
     }
 
     useEffect(() => {
@@ -72,93 +55,23 @@ export default function DictionaryDialog({
         }
     }, [open])
 
-    const addIngredient = async () => {
+    const mutate = async (action) => {
+        if (!editing) return
+        try { await action(); await load() } catch (error) { alert(error.message) }
+    }
+    const addIngredient = () => {
         const name = newIngredient.trim()
-
-        if (!name) return
-
-        const { error } = await supabase
-            .from('ingredients')
-            .insert({ name })
-
-        if (error) {
-            alert(error.message)
-            return
-        }
-
-        setNewIngredient('')
-        load()
+        if (name) mutate(async () => { await addReference('ingredients', { name, default_unit_id: null }); setNewIngredient('') })
     }
-
-    const deleteIngredient = async (id) => {
-        const confirmed = window.confirm(
-            'Supprimer cet ingrédient ?'
-        )
-
-        if (!confirmed) return
-
-        const { error } = await supabase
-            .from('ingredients')
-            .delete()
-            .eq('id', id)
-
-        if (error) {
-            alert(
-                'Impossible de supprimer cet ingrédient. Il est probablement utilisé dans une recette.'
-            )
-            return
-        }
-
-        load()
+    const deleteIngredient = id => {
+        if (window.confirm('Supprimer cet ingrédient ?')) mutate(() => deleteReference('ingredients', id))
     }
-
-    const addUnit = async () => {
-        const name =
-            newUnitName.trim()
-
-        const abbreviation =
-            newUnitAbbreviation.trim()
-
-        if (!name || !abbreviation) return
-
-        const { error } = await supabase
-            .from('units')
-            .insert({
-                name,
-                abbreviation,
-            })
-
-        if (error) {
-            alert(error.message)
-            return
-        }
-
-        setNewUnitName('')
-        setNewUnitAbbreviation('')
-
-        load()
+    const addUnit = () => {
+        const name = newUnitName.trim(), abbreviation = newUnitAbbreviation.trim()
+        if (name && abbreviation) mutate(async () => { await addReference('units', { name, abbreviation }); setNewUnitName(''); setNewUnitAbbreviation('') })
     }
-
-    const deleteUnit = async (id) => {
-        const confirmed = window.confirm(
-            'Supprimer cette unité ?'
-        )
-
-        if (!confirmed) return
-
-        const { error } = await supabase
-            .from('units')
-            .delete()
-            .eq('id', id)
-
-        if (error) {
-            alert(
-                'Impossible de supprimer cette unité. Elle est probablement utilisée dans une recette.'
-            )
-            return
-        }
-
-        load()
+    const deleteUnit = id => {
+        if (window.confirm('Supprimer cette unité ?')) mutate(() => deleteReference('units', id))
     }
 
     return (

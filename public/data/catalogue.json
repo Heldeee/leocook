@@ -1,0 +1,3306 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "ecade815-4fcc-4dc5-ae47-c8f695bd3b6e",
+      "name": "test",
+      "servings": 4,
+      "image_url": null,
+      "created_at": "2026-08-31 21:48:07.741761+00"
+    },
+    {
+      "id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "category": "airfryer",
+      "name": "Gâteau au yaourt et à la vanille",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": 25,
+      "description": "Un petit gâteau moelleux, facile à préparer pour le goûter.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "category": "airfryer",
+      "name": "Moelleux au chocolat",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": 20,
+      "description": "Un gâteau chocolaté avec un centre moelleux, sans chercher un cœur cru.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "category": "airfryer",
+      "name": "Gâteau pommes et cannelle",
+      "servings": 4,
+      "prep_minutes": 15,
+      "cook_minutes": 28,
+      "description": "Des morceaux de pommes dans une pâte douce parfumée à la cannelle.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "82310613-83a5-4651-a124-859d48d78195",
+      "category": "airfryer",
+      "name": "Banana bread aux pépites",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": 30,
+      "description": "Une façon simple d’utiliser les bananes bien mûres.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "category": "airfryer",
+      "name": "Petit gâteau au citron",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": 25,
+      "description": "Un gâteau frais et léger en bouche, sans glaçage obligatoire.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "category": "airfryer",
+      "name": "Gâteau carotte et noix",
+      "servings": 4,
+      "prep_minutes": 15,
+      "cook_minutes": 28,
+      "description": "Un gâteau rustique et moelleux avec un peu de croquant.",
+      "notes": "Pour un moule de 14 à 16 cm compatible avec ton airfryer, posé dans le panier en laissant circuler l’air. Les temps sont indicatifs : vérifie la cuisson avec une lame et prolonge par tranches de 3 minutes. Ne change pas seulement les quantités : un moule plus grand peut modifier la cuisson.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "category": "compotes",
+      "name": "Compote pomme et vanille",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "La compote classique, sans sucre ajouté.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "category": "compotes",
+      "name": "Compote pomme et poire",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "Une compote naturellement douce grâce aux poires mûres.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "category": "compotes",
+      "name": "Compote pomme et banane",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "Une texture onctueuse pour le petit déjeuner ou le goûter.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "category": "compotes",
+      "name": "Compote pomme et fraise",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "Une compote fruitée à préparer avec des fraises de saison.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "category": "compotes",
+      "name": "Compote pomme et abricot",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "Une version légèrement acidulée, à goûter avant de sucrer.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "category": "compotes",
+      "name": "Compote pomme et cannelle",
+      "servings": 4,
+      "prep_minutes": 10,
+      "cook_minutes": null,
+      "description": "Une compote réconfortante au parfum de cannelle.",
+      "notes": "Recette à adapter au modèle exact : 150 ml d’eau est un repère de départ, pas une garantie de compatibilité. Le temps du cycle n’est pas fixé ici. Si ton appareil ne prévoit pas de compote ou si MIN/MAX ne peuvent pas être respectés, cuire les fruits avec l’eau dans une casserole couverte, à feu doux, jusqu’à ce qu’ils soient tendres. Les fruits sont pesés après épluchage et retrait des noyaux.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "category": "plats",
+      "name": "Pâtes tomate et mozzarella",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 15,
+      "description": "Un plat du quotidien avec une sauce maison très simple.",
+      "notes": "La cuisson des pâtes se fait en parallèle de la sauce.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "category": "plats",
+      "name": "Poulet au curry et riz",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 20,
+      "description": "Une sauce douce et crémeuse avec très peu d’ingrédients.",
+      "notes": "Les temps dépendent de la taille des morceaux de poulet.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "category": "plats",
+      "name": "Omelette pommes de terre et fromage",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 20,
+      "description": "Une omelette complète à servir avec une salade verte.",
+      "notes": "Utiliser une poêle antiadhésive de 20 à 24 cm.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "category": "plats",
+      "name": "Gnocchis poêlés aux courgettes",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 15,
+      "description": "Une seule poêle pour un dîner rapide et réconfortant.",
+      "notes": "Vérifier sur le paquet que les gnocchis se cuisent directement à la poêle.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "category": "plats",
+      "name": "Riz sauté aux légumes et à l’œuf",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 20,
+      "description": "Une version accessible du riz sauté, avec des légumes du placard.",
+      "notes": "Si tu utilises du riz déjà cuit, il doit avoir été rapidement réfrigéré ; le réchauffer à cœur.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "category": "plats",
+      "name": "Lentilles mijotées aux carottes",
+      "servings": 3,
+      "prep_minutes": 10,
+      "cook_minutes": 30,
+      "description": "Un plat économique qui se prépare avec des ingrédients simples.",
+      "notes": "La durée varie selon les lentilles ; se fier à leur tendreté.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "category": "patisseries",
+      "name": "Muffins aux myrtilles",
+      "servings": 6,
+      "prep_minutes": 10,
+      "cook_minutes": 22,
+      "description": "Six muffins moelleux pour un goûter sans complication.",
+      "notes": "6 portions correspondent à 6 muffins.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "category": "patisseries",
+      "name": "Muffins double chocolat",
+      "servings": 6,
+      "prep_minutes": 10,
+      "cook_minutes": 20,
+      "description": "Du cacao et des pépites pour les amateurs de chocolat.",
+      "notes": "6 portions correspondent à 6 muffins.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "category": "patisseries",
+      "name": "Cookies aux pépites de chocolat",
+      "servings": 10,
+      "prep_minutes": 15,
+      "cook_minutes": 12,
+      "description": "Des cookies simples, croustillants au bord et tendres au centre.",
+      "notes": "10 portions correspondent à 10 cookies. Si la pâte est très molle, la refroidir avant de former les tas.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "category": "patisseries",
+      "name": "Cookies avoine, banane et chocolat",
+      "servings": 8,
+      "prep_minutes": 10,
+      "cook_minutes": 15,
+      "description": "Quatre ingrédients, sans beurre ni œuf, pour des biscuits souples.",
+      "notes": "8 portions correspondent à 8 petits biscuits.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "category": "patisseries",
+      "name": "Petits sablés à la vanille",
+      "servings": 12,
+      "prep_minutes": 15,
+      "cook_minutes": 12,
+      "description": "Des sablés faciles à découper, à préparer aussi avec des enfants.",
+      "notes": "Prévoir 30 minutes de repos en plus. 12 portions correspondent à 12 sablés.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "category": "patisseries",
+      "name": "Financiers aux amandes",
+      "servings": 6,
+      "prep_minutes": 10,
+      "cook_minutes": 15,
+      "description": "Une petite pâtisserie rapide pour utiliser des blancs d’œufs.",
+      "notes": "6 portions correspondent à 6 financiers.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "category": "salades",
+      "name": "Salade tomate, concombre et feta",
+      "servings": 2,
+      "prep_minutes": 15,
+      "cook_minutes": 0,
+      "description": "Une salade croquante et fraîche, prête sans cuisson.",
+      "notes": "Servir en accompagnement ou avec du pain pour un repas léger.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "category": "salades",
+      "name": "Salade verte, pomme et noix",
+      "servings": 2,
+      "prep_minutes": 10,
+      "cook_minutes": 0,
+      "description": "Un mélange frais, croquant et légèrement sucré.",
+      "notes": "Pour préparer à l’avance, conserver la sauce séparément.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "category": "salades",
+      "name": "Salade de pâtes au thon et maïs",
+      "servings": 3,
+      "prep_minutes": 15,
+      "cook_minutes": 10,
+      "description": "Une salade de pâtes complète pour le déjeuner.",
+      "notes": "Les poids du thon et du maïs correspondent aux produits égouttés.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "52c49858-3053-46dc-a638-5ae620495296",
+      "category": "salades",
+      "name": "Salade de pâtes pesto et mozzarella",
+      "servings": 3,
+      "prep_minutes": 15,
+      "cook_minutes": 10,
+      "description": "Une salade de pâtes colorée, avec une sauce déjà prête.",
+      "notes": "Garder au réfrigérateur jusqu’au repas.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "category": "salades",
+      "name": "Salade de pois chiches au citron",
+      "servings": 2,
+      "prep_minutes": 15,
+      "cook_minutes": 0,
+      "description": "Une salade rassasiante sans cuisson, avec une boîte de pois chiches.",
+      "notes": "Utiliser des pois chiches déjà cuits, pas des pois chiches secs.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    },
+    {
+      "id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "category": "salades",
+      "name": "Salade de riz, œufs et crudités",
+      "servings": 3,
+      "prep_minutes": 15,
+      "cook_minutes": 12,
+      "description": "Une salade complète et familière, pratique pour un repas à emporter.",
+      "notes": "Refroidir le riz rapidement et conserver la salade au réfrigérateur.",
+      "image_url": null,
+      "created_at": "2026-09-29T12:00:00.000Z"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "d48483e3-9a69-4bb2-a257-dc546a4330e1",
+      "name": "yaourt",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "1279ba02-fe46-4f20-9a97-4194946adf54",
+      "name": "oeuf",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "name": "sucre",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "name": "farine",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "5978c4ad-ecfe-4481-aa81-85afee176a23",
+      "name": "huile",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "03c0951d-5f89-4236-bbc4-31dbe515903f",
+      "name": "levure",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "29e3404a-e502-4fc3-be29-36c3a6edc046",
+      "name": "sucre vanillé",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "name": "tomate",
+      "default_unit_id": "2644638b-45e7-46e5-b51b-d863830fff3c"
+    },
+    {
+      "id": "27182d0d-0c6f-4fee-adc7-522847a6ce88",
+      "name": "yaourt nature",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "name": "œuf",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "name": "huile neutre",
+      "default_unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "name": "levure chimique",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "8c03362c-ff53-4701-aa75-f692c7769e0b",
+      "name": "extrait de vanille",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "407a6340-f05f-45b0-aeec-de7ae56c49bc",
+      "name": "chocolat noir",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "5450ea40-b15a-4362-a12e-43a650de9b61",
+      "name": "beurre",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "name": "pomme",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "be8047ca-094a-4e0e-a609-53a39d6aa6c5",
+      "name": "lait",
+      "default_unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "id": "85f9e68d-ac22-43d2-aa7b-e7c068fed643",
+      "name": "cannelle",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "e80609c3-da19-43e3-a517-521505df04ec",
+      "name": "banane mûre",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "d4100476-d7cb-4de9-a567-4a808868fe0d",
+      "name": "pépites de chocolat",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "c587a314-c23f-4560-af8e-d469cc02116d",
+      "name": "citron",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "23e41dd6-160c-4f2e-a48f-d95489e5fb3c",
+      "name": "carotte",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "8709a959-da25-44a7-a251-9f764171840e",
+      "name": "noix",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "name": "eau",
+      "default_unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "id": "f228f517-4901-4d37-a463-491465543593",
+      "name": "poire",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "91a5eeba-540d-403a-af3f-c2ceb5f03ac6",
+      "name": "fraise",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "028cf74f-d136-4b2c-a77d-70f7b81338cd",
+      "name": "abricot",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "be3159c9-6cce-4e6c-aa96-ffe0eddb0150",
+      "name": "pâtes sèches",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "ae1e424f-4ea1-41e9-a2c5-42504ce090e3",
+      "name": "tomates concassées",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "088aee61-c662-460e-ab61-9ab41c744418",
+      "name": "mozzarella",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "name": "oignon",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "201054ea-3ea2-4bae-a4b4-fa4a32149c5f",
+      "name": "ail",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "name": "huile d’olive",
+      "default_unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "id": "2f0a4cea-96c3-4431-a992-4c34c8d2d119",
+      "name": "basilic",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "name": "sel",
+      "default_unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "name": "poivre",
+      "default_unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "id": "d150c736-3cec-4f3d-a5b2-9c24da5b3428",
+      "name": "blanc de poulet",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "35da9519-1646-400b-af4b-2cf71436144e",
+      "name": "riz sec",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "1e1c97f0-0b61-45c2-a828-1eea211137e9",
+      "name": "lait de coco",
+      "default_unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "id": "a63a7654-6860-4b92-a9ad-ee7d905abcab",
+      "name": "curry doux",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "e48f4735-7a32-49e3-ae3b-8177c2fa9cdf",
+      "name": "pomme de terre",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "e01cf371-9e9a-4934-a882-f521281a9e8e",
+      "name": "emmental râpé",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "b32a6ab9-61ec-4fea-a01c-abf707a93bcf",
+      "name": "gnocchis à poêler",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "eb023178-567e-490f-a262-d89cb3c8ef3b",
+      "name": "courgette",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "8d62aef0-112f-484c-a909-197e428cef85",
+      "name": "crème fraîche",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "7347fcc1-7aa2-43ce-ab02-b8fbd5fccf90",
+      "name": "parmesan",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "889dff3a-c0e6-414c-a6f2-2c63f9c5a03b",
+      "name": "petits pois surgelés",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "d0cec5db-a869-45ed-a14a-396cf27bae10",
+      "name": "sauce soja",
+      "default_unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "id": "e2da4a41-9b0f-4a24-adfb-5e3c92dc17aa",
+      "name": "lentilles vertes sèches",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "d05ceb57-f1c8-4d00-a098-fac3e2a40fb9",
+      "name": "thym",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "817ff5fa-1b81-4cb2-abb1-df6b590270b0",
+      "name": "myrtille",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "3c8e17ac-5d1a-45ca-a9ae-50b7fef3d68b",
+      "name": "cacao non sucré",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "49a9c322-fc6d-471c-ad4c-f812cc6a416b",
+      "name": "beurre mou",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "1d6a2aad-6002-4a0a-a10c-eafbe86d9d53",
+      "name": "flocons d’avoine",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "c375cb11-3b4f-4cc7-a31c-bb8b6666a2e2",
+      "name": "blanc d’œuf",
+      "default_unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "id": "c728203b-45f9-4d7e-a423-ec3c4a4d7a15",
+      "name": "poudre d’amande",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "c3cf2b94-9a7e-4025-accd-347eeed43668",
+      "name": "sucre glace",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "a647df4c-2a75-45bc-aa7f-aa116e68e6dd",
+      "name": "concombre",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "34256a1a-7e6a-4b8d-ac65-366fc0aa98cf",
+      "name": "feta",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "2fe8b030-1e7b-42cd-ae5b-f144e0e746af",
+      "name": "oignon rouge",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "4e326020-0cae-4452-aa15-6f4d2229c0dd",
+      "name": "jus de citron",
+      "default_unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "id": "ad2211e5-c4d9-4e91-acb0-90ecdcff4b7f",
+      "name": "origan",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "e0cdcbb5-c807-4f7a-a9f2-1d3199635f11",
+      "name": "salade verte",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "8e37adcf-d7b6-444b-a2d1-53d24c3dd472",
+      "name": "emmental",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "01e170a1-c69c-4e54-a289-f8388c0eb626",
+      "name": "vinaigre de cidre",
+      "default_unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "id": "faf9e5bf-6a5e-486f-a62c-6a403fc4c2c5",
+      "name": "moutarde",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "id": "23521bde-3cb4-4306-af38-f3aa426a6786",
+      "name": "thon au naturel égoutté",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "5feeb453-ad14-4a8a-a54b-9c3c51d060c8",
+      "name": "maïs égoutté",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "c7eeb772-0501-495c-a6d9-a3e5e683e060",
+      "name": "persil",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "773a115d-10ec-4430-a598-5485d92063e2",
+      "name": "tomate cerise",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "57096e04-e39f-46f9-a081-b24331548101",
+      "name": "pesto",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "ca36664a-1844-43c7-a1e9-8506e302ad9e",
+      "name": "roquette",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "0c5865a3-5b29-4648-aca7-4312410bdb7b",
+      "name": "pois chiches cuits égouttés",
+      "default_unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "id": "137c663f-5256-4248-aca1-1abc1d886edf",
+      "name": "cumin",
+      "default_unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    }
+  ],
+  "units": [
+    {
+      "id": "39a00bb7-862d-4bd8-87fc-94b5555f6427",
+      "name": "gramme",
+      "abbreviation": "g"
+    },
+    {
+      "id": "2644638b-45e7-46e5-b51b-d863830fff3c",
+      "name": "kilogramme",
+      "abbreviation": "kg"
+    },
+    {
+      "id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22",
+      "name": "millilitre",
+      "abbreviation": "ml"
+    },
+    {
+      "id": "9f1ea3d4-2a17-4ae1-9a7b-2af81ba7f0b7",
+      "name": "litre",
+      "abbreviation": "l"
+    },
+    {
+      "id": "d42de8b1-e034-4292-a2f5-c3a05be9584e",
+      "name": "cuillère à soupe",
+      "abbreviation": "c. à s."
+    },
+    {
+      "id": "ac7143e6-5556-4437-8f32-2527f63a2d35",
+      "name": "cuillère à café",
+      "abbreviation": "c. à c."
+    },
+    {
+      "id": "1faa784b-4895-44d2-966d-16fed8aa20ab",
+      "name": "pièce",
+      "abbreviation": "pc"
+    },
+    {
+      "id": "f0787101-3c28-4669-abc6-c090db8bdfee",
+      "name": "pincée",
+      "abbreviation": "pincée"
+    },
+    {
+      "id": "1e5147a1-78e9-428b-bc57-220190a03fa5",
+      "name": "pot",
+      "abbreviation": "pt"
+    }
+  ],
+  "tags": [
+    {
+      "id": "08df2b01-1d29-4e4a-a00e-935cf0ef1ea8",
+      "name": "gâteau"
+    },
+    {
+      "id": "8cce27c0-b85d-4912-a60d-65b0beed327c",
+      "name": "yaourt"
+    },
+    {
+      "id": "9394221e-2f26-4296-9ea6-0e60c71b0f32",
+      "name": "tomate"
+    },
+    {
+      "id": "2a9b1638-cc7c-4791-a1b3-54cfafafd92a",
+      "name": "soupe"
+    },
+    {
+      "id": "741c55f7-2aab-4735-a0d9-1d995199d3d0",
+      "name": "Goûter"
+    },
+    {
+      "id": "4d3c3812-011b-4d13-ad16-f0894c882ea8",
+      "name": "Vanille"
+    },
+    {
+      "id": "0d8e4554-6228-47cc-adfe-85c1f6927788",
+      "name": "Chocolat"
+    },
+    {
+      "id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7",
+      "name": "Fruits"
+    },
+    {
+      "id": "1174b1dc-7cd3-4c06-aa35-4bb4ead2d91a",
+      "name": "Citron"
+    },
+    {
+      "id": "df8beb3d-cae4-4468-a5e4-dcf79557ab71",
+      "name": "Fruits à coque"
+    },
+    {
+      "id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3",
+      "name": "Sans sucre ajouté"
+    },
+    {
+      "id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966",
+      "name": "Végétarien"
+    },
+    {
+      "id": "b5a71c66-e151-41db-a408-1d401e013f33",
+      "name": "Rapide"
+    },
+    {
+      "id": "2bfa3908-f5b0-49fd-a440-7619bd224dff",
+      "name": "Poulet"
+    },
+    {
+      "id": "dff0bf01-6665-4d2f-a8ea-8a00a4ade2f5",
+      "name": "Riz"
+    },
+    {
+      "id": "ce39a122-f56b-4c23-a300-b7af74b8afa0",
+      "name": "Œufs"
+    },
+    {
+      "id": "77e4772b-fd97-4a4a-a9f5-908a5ae9128f",
+      "name": "Légumineuses"
+    },
+    {
+      "id": "5fd20974-8b2b-487d-a7e7-16886cfa2df5",
+      "name": "Sans œuf"
+    },
+    {
+      "id": "e16244c3-8f6f-478d-ad85-e9bf86b7c100",
+      "name": "Sans cuisson"
+    },
+    {
+      "id": "7b95efff-9947-4bdb-a74f-3433751d48b5",
+      "name": "Pâtes"
+    },
+    {
+      "id": "60bd1883-e4ee-40ae-a48e-f483ce3459ef",
+      "name": "Poisson"
+    }
+  ],
+  "recipe_ingredients": [
+    {
+      "recipe_id": "ecade815-4fcc-4dc5-ae47-c8f695bd3b6e",
+      "ingredient_id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "quantity": 1,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "27182d0d-0c6f-4fee-adc7-522847a6ce88",
+      "quantity": 125,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 70,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 40,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "ingredient_id": "8c03362c-ff53-4701-aa75-f692c7769e0b",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "407a6340-f05f-45b0-aeec-de7ae56c49bc",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "5450ea40-b15a-4362-a12e-43a650de9b61",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 3,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 130,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "5450ea40-b15a-4362-a12e-43a650de9b61",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "be8047ca-094a-4e0e-a609-53a39d6aa6c5",
+      "quantity": 40,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "ingredient_id": "85f9e68d-ac22-43d2-aa7b-e7c068fed643",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "e80609c3-da19-43e3-a517-521505df04ec",
+      "quantity": 180,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 40,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 35,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "be8047ca-094a-4e0e-a609-53a39d6aa6c5",
+      "quantity": 30,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "ingredient_id": "d4100476-d7cb-4de9-a567-4a808868fe0d",
+      "quantity": 40,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 75,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "27182d0d-0c6f-4fee-adc7-522847a6ce88",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 35,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "c587a314-c23f-4560-af8e-d469cc02116d",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "23e41dd6-160c-4f2e-a48f-d95489e5fb3c",
+      "quantity": 120,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 120,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 40,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "8709a959-da25-44a7-a251-9f764171840e",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "ingredient_id": "85f9e68d-ac22-43d2-aa7b-e7c068fed643",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 700,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "ingredient_id": "8c03362c-ff53-4701-aa75-f692c7769e0b",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 400,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "ingredient_id": "f228f517-4901-4d37-a463-491465543593",
+      "quantity": 300,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 500,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "ingredient_id": "e80609c3-da19-43e3-a517-521505df04ec",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 450,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "ingredient_id": "91a5eeba-540d-403a-af3f-c2ceb5f03ac6",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 350,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "ingredient_id": "028cf74f-d136-4b2c-a77d-70f7b81338cd",
+      "quantity": 350,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 700,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "ingredient_id": "85f9e68d-ac22-43d2-aa7b-e7c068fed643",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 150,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "be3159c9-6cce-4e6c-aa96-ffe0eddb0150",
+      "quantity": 180,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "ae1e424f-4ea1-41e9-a2c5-42504ce090e3",
+      "quantity": 400,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "088aee61-c662-460e-ab61-9ab41c744418",
+      "quantity": 125,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "201054ea-3ea2-4bae-a4b4-fa4a32149c5f",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "2f0a4cea-96c3-4431-a992-4c34c8d2d119",
+      "quantity": 5,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "d150c736-3cec-4f3d-a5b2-9c24da5b3428",
+      "quantity": 300,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "35da9519-1646-400b-af4b-2cf71436144e",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "1e1c97f0-0b61-45c2-a828-1eea211137e9",
+      "quantity": 200,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "a63a7654-6860-4b92-a9ad-ee7d905abcab",
+      "quantity": 2,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "e48f4735-7a32-49e3-ae3b-8177c2fa9cdf",
+      "quantity": 300,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 4,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "e01cf371-9e9a-4934-a882-f521281a9e8e",
+      "quantity": 40,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "b32a6ab9-61ec-4fea-a01c-abf707a93bcf",
+      "quantity": 350,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "eb023178-567e-490f-a262-d89cb3c8ef3b",
+      "quantity": 300,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "8d62aef0-112f-484c-a909-197e428cef85",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "7347fcc1-7aa2-43ce-ab02-b8fbd5fccf90",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "201054ea-3ea2-4bae-a4b4-fa4a32149c5f",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "35da9519-1646-400b-af4b-2cf71436144e",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "23e41dd6-160c-4f2e-a48f-d95489e5fb3c",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "889dff3a-c0e6-414c-a6f2-2c63f9c5a03b",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "ingredient_id": "d0cec5db-a869-45ed-a14a-396cf27bae10",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "e2da4a41-9b0f-4a24-adfb-5e3c92dc17aa",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "23e41dd6-160c-4f2e-a48f-d95489e5fb3c",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "5a1a4e4e-275a-4a8c-a836-bd3d5f169d40",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "ae1e424f-4ea1-41e9-a2c5-42504ce090e3",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "482ee51d-d907-44ea-a067-9e49735fb1d4",
+      "quantity": 700,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "d05ceb57-f1c8-4d00-a098-fac3e2a40fb9",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 65,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "be8047ca-094a-4e0e-a609-53a39d6aa6c5",
+      "quantity": 100,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 40,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "ingredient_id": "817ff5fa-1b81-4cb2-abb1-df6b590270b0",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 130,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "3c8e17ac-5d1a-45ca-a9ae-50b7fef3d68b",
+      "quantity": 20,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 65,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "be8047ca-094a-4e0e-a609-53a39d6aa6c5",
+      "quantity": 110,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "48f4b765-aea4-43a6-a73f-fad4e52992ca",
+      "quantity": 40,
+      "unit_id": "6ad879a3-fe4d-4dcd-bb0f-f49b3c322b22"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 6,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "ingredient_id": "d4100476-d7cb-4de9-a567-4a808868fe0d",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "49a9c322-fc6d-471c-ad4c-f812cc6a416b",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 70,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "d4100476-d7cb-4de9-a567-4a808868fe0d",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "abc65131-5760-472b-a6e0-7ece820fa9eb",
+      "quantity": 3,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "ingredient_id": "e80609c3-da19-43e3-a517-521505df04ec",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "ingredient_id": "1d6a2aad-6002-4a0a-a10c-eafbe86d9d53",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "ingredient_id": "d4100476-d7cb-4de9-a567-4a808868fe0d",
+      "quantity": 40,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "ingredient_id": "85f9e68d-ac22-43d2-aa7b-e7c068fed643",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "ingredient_id": "49a9c322-fc6d-471c-ad4c-f812cc6a416b",
+      "quantity": 80,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "ingredient_id": "235f8ef6-59e4-4085-a338-505439b4ea7a",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 1,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "ingredient_id": "8c03362c-ff53-4701-aa75-f692c7769e0b",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "ingredient_id": "c375cb11-3b4f-4cc7-a31c-bb8b6666a2e2",
+      "quantity": 2,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "ingredient_id": "5450ea40-b15a-4362-a12e-43a650de9b61",
+      "quantity": 60,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "ingredient_id": "c728203b-45f9-4d7e-a423-ec3c4a4d7a15",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "ingredient_id": "c3cf2b94-9a7e-4025-accd-347eeed43668",
+      "quantity": 70,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "ingredient_id": "1c290501-e002-4db7-b752-41d9484cf18a",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "quantity": 300,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "a647df4c-2a75-45bc-aa7f-aa116e68e6dd",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "34256a1a-7e6a-4b8d-ac65-366fc0aa98cf",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "2fe8b030-1e7b-42cd-ae5b-f144e0e746af",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1.5,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "4e326020-0cae-4452-aa15-6f4d2229c0dd",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "ad2211e5-c4d9-4e91-acb0-90ecdcff4b7f",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "e0cdcbb5-c807-4f7a-a9f2-1d3199635f11",
+      "quantity": 120,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "3932c890-8574-4303-a6aa-d7cc24cde88b",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "8709a959-da25-44a7-a251-9f764171840e",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "8e37adcf-d7b6-444b-a2d1-53d24c3dd472",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1.5,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "01e170a1-c69c-4e54-a289-f8388c0eb626",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "ingredient_id": "faf9e5bf-6a5e-486f-a62c-6a403fc4c2c5",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "be3159c9-6cce-4e6c-aa96-ffe0eddb0150",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "23521bde-3cb4-4306-af38-f3aa426a6786",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "5feeb453-ad14-4a8a-a54b-9c3c51d060c8",
+      "quantity": 140,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 2,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "4e326020-0cae-4452-aa15-6f4d2229c0dd",
+      "quantity": 1.5,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "c7eeb772-0501-495c-a6d9-a3e5e683e060",
+      "quantity": 5,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "ingredient_id": "6e3a678f-82b0-4f48-a872-537abbaea065",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "be3159c9-6cce-4e6c-aa96-ffe0eddb0150",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "773a115d-10ec-4430-a598-5485d92063e2",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "088aee61-c662-460e-ab61-9ab41c744418",
+      "quantity": 125,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "57096e04-e39f-46f9-a081-b24331548101",
+      "quantity": 50,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "ca36664a-1844-43c7-a1e9-8506e302ad9e",
+      "quantity": 40,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "0c5865a3-5b29-4648-aca7-4312410bdb7b",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "a647df4c-2a75-45bc-aa7f-aa116e68e6dd",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "quantity": 200,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "2fe8b030-1e7b-42cd-ae5b-f144e0e746af",
+      "quantity": 30,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "c7eeb772-0501-495c-a6d9-a3e5e683e060",
+      "quantity": 10,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 1.5,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "4e326020-0cae-4452-aa15-6f4d2229c0dd",
+      "quantity": 2,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "137c663f-5256-4248-aca1-1abc1d886edf",
+      "quantity": 0.5,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "ingredient_id": "11d37cfb-7792-45be-a665-1593cdf28d24",
+      "quantity": 1,
+      "unit_id": "f0787101-3c28-4669-abc6-c090db8bdfee"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "35da9519-1646-400b-af4b-2cf71436144e",
+      "quantity": 180,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "ffcfcc66-f6aa-44ac-a7ba-ce405e23d3b2",
+      "quantity": 3,
+      "unit_id": "1faa784b-4895-44d2-966d-16fed8aa20ab"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "191ba2a7-36c9-4b3e-a0cf-7fdd03c8ee55",
+      "quantity": 250,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "a647df4c-2a75-45bc-aa7f-aa116e68e6dd",
+      "quantity": 150,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "5feeb453-ad14-4a8a-a54b-9c3c51d060c8",
+      "quantity": 100,
+      "unit_id": "39a00bb7-862d-4bd8-87fc-94b5555f6427"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "fd3b3e5c-bf83-4ae3-ae23-8b60200392be",
+      "quantity": 2,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "01e170a1-c69c-4e54-a289-f8388c0eb626",
+      "quantity": 1,
+      "unit_id": "d42de8b1-e034-4292-a2f5-c3a05be9584e"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "ingredient_id": "faf9e5bf-6a5e-486f-a62c-6a403fc4c2c5",
+      "quantity": 1,
+      "unit_id": "ac7143e6-5556-4437-8f32-2527f63a2d35"
+    }
+  ],
+  "recipe_steps": [
+    {
+      "id": "e0a44de9-4d13-4e5f-bd91-e5ae24c4d498",
+      "recipe_id": "ecade815-4fcc-4dc5-ae47-c8f695bd3b6e",
+      "step_number": 1,
+      "instruction": "toomate",
+      "duration_seconds": 120
+    },
+    {
+      "id": "7b741680-1331-494f-aa68-b456e31a6444",
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "796c7b35-6e3a-4543-a7b9-1c0211d64ac9",
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "step_number": 2,
+      "instruction": "Fouetter les œufs avec le sucre. Ajouter le yaourt, l’huile et la vanille.",
+      "duration_seconds": null
+    },
+    {
+      "id": "56153ce6-8d09-4205-a954-c987a1e30227",
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "step_number": 3,
+      "instruction": "Incorporer la farine et la levure sans trop travailler la pâte. Verser dans le moule en le remplissant aux deux tiers maximum.",
+      "duration_seconds": null
+    },
+    {
+      "id": "d54fa263-c197-4e13-a5ea-cdeacb3739ed",
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "step_number": 4,
+      "instruction": "Cuire à 160 °C pendant environ 25 minutes. Contrôler dès 20 minutes, car la puissance varie selon l’appareil.",
+      "duration_seconds": 1500
+    },
+    {
+      "id": "9bd27106-08a5-47e5-a89b-84a867cfbde9",
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "c1d381a4-cc37-4b59-a340-7c6894d77878",
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "dd915e46-acfe-4cd5-ab64-2994db3e1d0a",
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "step_number": 2,
+      "instruction": "Faire fondre doucement le chocolat et le beurre au micro-ondes par petites séquences ou au bain-marie. Mélanger et laisser tiédir.",
+      "duration_seconds": null
+    },
+    {
+      "id": "acbedbcb-d5c9-47de-ad40-ad3c003f44b1",
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "step_number": 3,
+      "instruction": "Fouetter les œufs et le sucre, puis incorporer le chocolat fondu. Ajouter la farine et la levure.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b8ba8d81-a7b4-4ffe-a3ce-34e7435e3064",
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "step_number": 4,
+      "instruction": "Verser dans le moule et cuire à 150 °C pendant environ 20 minutes. Vérifier dès 16 minutes : le centre doit être pris, sans pâte liquide.",
+      "duration_seconds": 1200
+    },
+    {
+      "id": "6071372c-8d63-4cf3-ad74-8b007ce9c953",
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "e9f084fc-aa1a-4f06-a649-3e148ab1049d",
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "506feb8d-5ff2-4cc7-a573-be2d03c5bc5a",
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "step_number": 2,
+      "instruction": "Éplucher les pommes et les couper en petits dés. Faire fondre le beurre et laisser tiédir.",
+      "duration_seconds": null
+    },
+    {
+      "id": "de1a2abe-32d1-44f1-aaf6-643741b4fa01",
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "step_number": 3,
+      "instruction": "Fouetter les œufs et le sucre. Ajouter le beurre et le lait, puis la farine, la levure et la cannelle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "798762af-3059-4114-a79b-25d60b942a01",
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "step_number": 4,
+      "instruction": "Incorporer les pommes, verser dans le moule et cuire à 155 °C pendant environ 28 minutes. Vérifier dès 23 minutes.",
+      "duration_seconds": 1680
+    },
+    {
+      "id": "f8af022c-399e-4e7c-a27c-2e8bef7d7ea0",
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "634bf5c6-5438-4f52-a842-ba551ae9e96e",
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "3ad17044-6dd0-475e-ac72-72c208ee47f9",
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "step_number": 2,
+      "instruction": "Écraser les bananes à la fourchette. Ajouter l’œuf, le sucre, l’huile et le lait.",
+      "duration_seconds": null
+    },
+    {
+      "id": "a8989931-f6e9-4a9c-ac0e-ca0fb2df2182",
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "step_number": 3,
+      "instruction": "Incorporer la farine et la levure, puis les pépites. Verser dans le moule aux deux tiers maximum.",
+      "duration_seconds": null
+    },
+    {
+      "id": "7fca4e70-ec13-4e0d-a4d0-09e3fec7d1fb",
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "step_number": 4,
+      "instruction": "Cuire à 150 °C pendant environ 30 minutes. Vérifier dès 25 minutes, sans confondre chocolat fondu et pâte crue sur la lame.",
+      "duration_seconds": 1800
+    },
+    {
+      "id": "4be2a76d-85c7-404a-a638-469398269264",
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "8f2c52c8-3ece-4085-a878-10b0eb8b4421",
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "be71a764-cfd0-4259-a4ad-49db4874075e",
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "step_number": 2,
+      "instruction": "Laver le citron, prélever le zeste puis presser le jus. Réserver deux cuillères à soupe de jus pour la pâte.",
+      "duration_seconds": null
+    },
+    {
+      "id": "3ca80e10-d862-4e33-ac83-45da41f9ef58",
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "step_number": 3,
+      "instruction": "Fouetter les œufs et le sucre. Ajouter le yaourt, l’huile, le zeste et le jus réservé.",
+      "duration_seconds": null
+    },
+    {
+      "id": "5918e6fc-9132-4a39-a3de-cd6b10bab6ba",
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "step_number": 4,
+      "instruction": "Incorporer la farine et la levure. Verser dans le moule puis cuire à 160 °C pendant environ 25 minutes ; contrôler dès 20 minutes.",
+      "duration_seconds": 1500
+    },
+    {
+      "id": "b2a376c3-db49-41f5-ab68-d97a9a7473e5",
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "add241f2-88fc-4a03-ab5b-47feeac69e2c",
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "step_number": 1,
+      "instruction": "Beurrer un moule de 14 à 16 cm compatible avec l’airfryer. Préparer le panier et préchauffer seulement si la notice de ton appareil le recommande.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0783229d-1891-4128-a187-1dd7931040df",
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "step_number": 2,
+      "instruction": "Râper finement les carottes et concasser les noix.",
+      "duration_seconds": null
+    },
+    {
+      "id": "c2f6aad1-0eab-461a-a412-69962cba72ac",
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "step_number": 3,
+      "instruction": "Fouetter les œufs, le sucre et l’huile. Ajouter la farine, la levure et la cannelle, puis les carottes et les noix.",
+      "duration_seconds": null
+    },
+    {
+      "id": "9cf9c07a-0b0d-4381-aed5-a7e83d4838fa",
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "step_number": 4,
+      "instruction": "Verser dans le moule. Cuire à 155 °C pendant environ 28 minutes ; vérifier dès 23 minutes.",
+      "duration_seconds": 1680
+    },
+    {
+      "id": "4f6faa3d-369f-4bac-a452-a741169e3948",
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "step_number": 5,
+      "instruction": "Piquer le centre avec une lame : elle doit ressortir sans pâte crue. Si besoin, prolonger de 3 minutes et vérifier à nouveau. Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "7b810b68-3141-4fbb-a53f-5c5dec3cfa2b",
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes, retirer les trognons et couper en dés de 1 à 2 cm.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0f288ca1-a9f9-4f3b-a10e-87d030d9c37d",
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "028a0ec1-9f63-4a70-a10c-c7173c34dd66",
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "24f807c0-7592-4a4d-a516-4c2b3508e594",
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "9b0cef9f-9e33-4da8-ae21-48d605c91fdd",
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "fa89b704-d9b0-4aa1-a5e2-943f55dac168",
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes et les poires, retirer les trognons et couper en dés de 1 à 2 cm.",
+      "duration_seconds": null
+    },
+    {
+      "id": "057aef22-148b-4e36-afb1-1e4895704237",
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0abeb99f-141e-45eb-af90-636743cd15e2",
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "eff675db-09bb-4d00-a352-76ae1ad3331d",
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "ece2f4ce-3e29-41bd-a620-4fb62122ed6f",
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "97bfcd20-c6f6-4187-ad5f-35c42e97ba29",
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes, retirer les trognons et couper en dés. Couper les bananes en rondelles.",
+      "duration_seconds": null
+    },
+    {
+      "id": "af723209-625d-4193-ab84-c7c9733aba23",
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "f302af09-85f9-4ff9-afec-7b5a8e15229f",
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "2cfdb205-dda3-442b-ae48-965e3f9a4fae",
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b3175f7c-9937-46e1-aaff-3eb54ef094dd",
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "c9e92e79-8ecb-422d-a4b6-dfa1890d2c6f",
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes et retirer les trognons. Laver et équeuter les fraises. Couper les fruits en petits morceaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "cfbb02be-a32b-4fdf-ad32-2925f317b600",
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b67a92dc-0af1-46be-ad0a-0134ed44eae8",
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "3d849e3e-21d8-4ee0-a5e8-40d5ce3954fd",
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "16a3cf13-125e-40e6-a190-8aa476718d0f",
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "233cd687-1b76-42f8-ae5e-8c8fd389fce7",
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes et retirer les trognons. Laver les abricots, retirer les noyaux et couper tous les fruits en petits dés.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b8166e55-e099-4660-a1d4-71508aa7a6e6",
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "a85e6ca9-dd98-4a6e-a9d3-58bd6f1a406e",
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "93cecb17-e684-4e17-a8c3-31596cff42b8",
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "adcebde2-c88a-491b-ac62-546b0085eb31",
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0347b6ff-bef6-4c36-af61-884810042603",
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes, retirer les trognons et couper en dés de 1 à 2 cm.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4b7c143b-bca9-495d-a7d7-f4690643dd2a",
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "step_number": 2,
+      "instruction": "Vérifier que la notice de ton cuiseur à soupe Tefal autorise les compotes. Mettre les fruits et l’eau dans le bol ; ajuster la quantité d’eau et le lot aux repères MIN/MAX et aux proportions indiquées par la notice, sans jamais dépasser MAX.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b2f77596-e0a5-4aa2-a490-80d85d543e22",
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "step_number": 3,
+      "instruction": "Ajouter les aromates éventuels. Fermer le couvercle et lancer le programme compote, ou le programme explicitement recommandé pour les fruits par la notice. Ne pas utiliser un cycle soupe au hasard : sa durée et sa quantité minimale dépendent du modèle.",
+      "duration_seconds": null
+    },
+    {
+      "id": "d1faff1c-6721-43e4-afd0-7198d0017d8e",
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "step_number": 4,
+      "instruction": "À la fin du cycle, ouvrir en suivant la notice et en faisant attention à la vapeur. Vérifier que les fruits sont tendres. Mixer uniquement si le programme et la notice le permettent ; sinon terminer à la casserole puis écraser à la fourchette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "e007d6af-7ff0-4cb6-abb6-9e636fcc6eaf",
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "step_number": 5,
+      "instruction": "Goûter une cuillerée refroidie. Laisser tiédir, répartir dans des contenants propres puis placer au réfrigérateur. Ne pas considérer cette recette comme une méthode de conservation en bocaux.",
+      "duration_seconds": null
+    },
+    {
+      "id": "d03d7887-e5cb-43dd-a452-b3e43b81f21f",
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "step_number": 1,
+      "instruction": "Émincer l’oignon et l’ail. Égoutter la mozzarella et la couper en dés.",
+      "duration_seconds": null
+    },
+    {
+      "id": "482e04be-2d01-4b88-a5b0-e82e62478a74",
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "step_number": 2,
+      "instruction": "Faire revenir l’oignon dans l’huile à feu moyen pendant 4 minutes. Ajouter l’ail et remuer 30 secondes.",
+      "duration_seconds": 240
+    },
+    {
+      "id": "b5fad2ed-f486-4e20-a232-ed09a46ef4d1",
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "step_number": 3,
+      "instruction": "Ajouter les tomates, le sel et le poivre. Laisser mijoter 10 minutes à feu doux.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "196599cc-27bf-4678-a402-5839e5f66b36",
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "step_number": 4,
+      "instruction": "Pendant ce temps, cuire les pâtes dans une casserole d’eau bouillante selon le temps du paquet. Réserver un peu d’eau de cuisson puis égoutter.",
+      "duration_seconds": null
+    },
+    {
+      "id": "95e14ddf-40d2-4b40-a51d-b5d9c974dee6",
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "step_number": 5,
+      "instruction": "Mélanger les pâtes à la sauce. Ajouter un peu d’eau de cuisson si nécessaire, puis la mozzarella et le basilic. Servir aussitôt.",
+      "duration_seconds": null
+    },
+    {
+      "id": "6c269448-174b-424d-a60e-f66f533a5883",
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "step_number": 1,
+      "instruction": "Émincer l’oignon et couper le poulet en morceaux réguliers. Laver les mains et les ustensiles après manipulation du poulet cru.",
+      "duration_seconds": null
+    },
+    {
+      "id": "f2a54471-bdf6-40e6-ab3c-ada6a19ba1e4",
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "step_number": 2,
+      "instruction": "Lancer la cuisson du riz selon le paquet dans une casserole séparée.",
+      "duration_seconds": null
+    },
+    {
+      "id": "7eb93cd9-54a6-4bff-a3a3-f13539fd4620",
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "step_number": 3,
+      "instruction": "Faire revenir l’oignon dans l’huile pendant 4 minutes. Ajouter le poulet et le faire dorer sur toutes les faces.",
+      "duration_seconds": 240
+    },
+    {
+      "id": "fa16bd02-5c06-4cdd-af12-394088ecf573",
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "step_number": 4,
+      "instruction": "Ajouter le curry, le lait de coco et le sel. Laisser mijoter doucement environ 12 minutes en remuant ; vérifier que le poulet est entièrement cuit au centre et prolonger si nécessaire.",
+      "duration_seconds": 720
+    },
+    {
+      "id": "307e7e96-1bd1-4b8f-aeb4-e688b480ff7f",
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "step_number": 5,
+      "instruction": "Servir le poulet avec le riz. Ajouter un peu d’eau à la sauce si elle a trop réduit.",
+      "duration_seconds": null
+    },
+    {
+      "id": "60a1b1b3-1932-4189-a399-a2775f38c905",
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "step_number": 1,
+      "instruction": "Éplucher les pommes de terre, les couper en petits dés et émincer l’oignon.",
+      "duration_seconds": null
+    },
+    {
+      "id": "220e7c5f-7da4-446d-a5ee-54a93a31782a",
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "step_number": 2,
+      "instruction": "Cuire les pommes de terre dans une casserole d’eau frémissante pendant environ 10 minutes, jusqu’à ce qu’elles soient tendres. Égoutter.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "7c752ba3-b120-4496-a5b9-25150815a7e1",
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "step_number": 3,
+      "instruction": "Faire revenir l’oignon dans l’huile pendant 4 minutes. Ajouter les pommes de terre et les faire légèrement dorer.",
+      "duration_seconds": 240
+    },
+    {
+      "id": "485d5f41-df27-403d-aeca-a0927cdbe87f",
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "step_number": 4,
+      "instruction": "Battre les œufs avec le fromage, le sel et le poivre. Verser sur les légumes.",
+      "duration_seconds": null
+    },
+    {
+      "id": "42accc06-196f-4165-a764-b103acee6a11",
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "step_number": 5,
+      "instruction": "Cuire à feu doux, à couvert, environ 6 minutes jusqu’à ce que les œufs soient pris. Si le dessus reste liquide, prolonger doucement.",
+      "duration_seconds": 360
+    },
+    {
+      "id": "f7da80ef-29e7-4584-a2bc-c09533bdcddf",
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "step_number": 1,
+      "instruction": "Laver la courgette et la couper en demi-rondelles fines. Émincer l’ail.",
+      "duration_seconds": null
+    },
+    {
+      "id": "1c98084b-b30e-4541-ab86-d39237fdb16a",
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "step_number": 2,
+      "instruction": "Faire revenir la courgette dans l’huile à feu moyen pendant 7 minutes, en remuant. Ajouter l’ail en fin de cuisson.",
+      "duration_seconds": 420
+    },
+    {
+      "id": "43b9d6b3-bddc-4739-a244-1eacf6535bc9",
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "step_number": 3,
+      "instruction": "Ajouter les gnocchis à poêler et les cuire selon les indications du paquet, environ 5 minutes. Pour des gnocchis classiques, les cuire à l’eau avant cette étape.",
+      "duration_seconds": 300
+    },
+    {
+      "id": "afcbbf47-69c9-422d-a10b-ab01d4e9c386",
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "step_number": 4,
+      "instruction": "Ajouter la crème, le parmesan, le sel et le poivre. Mélanger à feu doux pendant 2 minutes puis servir.",
+      "duration_seconds": 120
+    },
+    {
+      "id": "d402caa8-33a5-4a17-aad3-644badb7d0f2",
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "step_number": 1,
+      "instruction": "Cuire le riz selon le paquet, l’égoutter et le laisser s’évaporer quelques minutes pendant la préparation des légumes.",
+      "duration_seconds": null
+    },
+    {
+      "id": "6a062334-50a2-42c2-a53d-6b5a388cba3a",
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "step_number": 2,
+      "instruction": "Émincer l’oignon et couper la carotte en tout petits dés.",
+      "duration_seconds": null
+    },
+    {
+      "id": "02b55cda-f065-44ad-ab78-55be664fad7d",
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "step_number": 3,
+      "instruction": "Faire revenir l’oignon et la carotte dans l’huile pendant 6 minutes. Ajouter les petits pois et deux cuillères d’eau ; poursuivre 4 minutes.",
+      "duration_seconds": 360
+    },
+    {
+      "id": "b25ebb1f-80d3-44bd-accd-d2628f9def39",
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "step_number": 4,
+      "instruction": "Pousser les légumes sur le côté. Verser les œufs battus et remuer jusqu’à ce qu’ils soient pris, puis les mélanger aux légumes.",
+      "duration_seconds": 180
+    },
+    {
+      "id": "a79ca300-86a8-4b8a-a36e-f8b024a38ee5",
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "step_number": 5,
+      "instruction": "Ajouter le riz et la sauce soja. Faire sauter 3 minutes en remuant, puis servir chaud.",
+      "duration_seconds": 180
+    },
+    {
+      "id": "8ee6e60b-0be3-4a72-a76a-8708dad26ce2",
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "step_number": 1,
+      "instruction": "Rincer les lentilles. Éplucher les carottes et les couper en petits dés. Émincer l’oignon.",
+      "duration_seconds": null
+    },
+    {
+      "id": "9484da35-7cab-427a-a3c2-e30e50b74e2e",
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "step_number": 2,
+      "instruction": "Faire revenir l’oignon dans l’huile pendant 4 minutes. Ajouter les carottes et mélanger.",
+      "duration_seconds": 240
+    },
+    {
+      "id": "000a6122-cb1b-4029-aef1-fa9f9c65883e",
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "step_number": 3,
+      "instruction": "Ajouter les lentilles, les tomates, l’eau et le thym. Porter à frémissement puis couvrir partiellement.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4de70efd-dd74-4420-a0eb-d207f7b78fd0",
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "step_number": 4,
+      "instruction": "Laisser cuire environ 25 à 30 minutes à feu doux, jusqu’à ce que les lentilles soient tendres. Ajouter de l’eau si nécessaire.",
+      "duration_seconds": 1500
+    },
+    {
+      "id": "d8cbd793-23b6-4444-a01a-79e457f8af02",
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "step_number": 5,
+      "instruction": "Saler, poivrer et servir. Pour une texture plus épaisse, laisser réduire quelques minutes à découvert.",
+      "duration_seconds": null
+    },
+    {
+      "id": "15fd67fe-8b3c-4978-a0be-0b55113ba8a3",
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "step_number": 1,
+      "instruction": "Préchauffer le four à 180 °C en chaleur traditionnelle. Préparer 6 moules à muffins.",
+      "duration_seconds": null
+    },
+    {
+      "id": "37c7b9ea-e90a-4797-a314-fcdc81765c2f",
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "step_number": 2,
+      "instruction": "Mélanger la farine, le sucre et la levure dans un saladier. Dans un autre, fouetter l’œuf, le lait et l’huile.",
+      "duration_seconds": null
+    },
+    {
+      "id": "cf85a118-5fcf-4582-a812-daeec6a842af",
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "step_number": 3,
+      "instruction": "Réunir les deux mélanges sans trop travailler la pâte. Incorporer délicatement les myrtilles.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4c93977e-b5ac-4b53-adaa-8350d0fe1bf1",
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "step_number": 4,
+      "instruction": "Remplir les moules aux deux tiers. Enfourner environ 22 minutes ; vérifier avec une lame, sans confondre jus de fruit et pâte crue.",
+      "duration_seconds": 1320
+    },
+    {
+      "id": "9daa8d79-3aa6-4ae7-ae9f-c660bbeebe54",
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "step_number": 5,
+      "instruction": "Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "de399c04-685c-491d-ad86-7e5e8f67eb3e",
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "step_number": 1,
+      "instruction": "Préchauffer le four à 180 °C en chaleur traditionnelle et préparer 6 moules à muffins.",
+      "duration_seconds": null
+    },
+    {
+      "id": "9009a2d0-ffcf-44de-a2c9-4da2ee0092d4",
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "step_number": 2,
+      "instruction": "Mélanger farine, cacao, sucre et levure. Fouetter séparément l’œuf, le lait et l’huile.",
+      "duration_seconds": null
+    },
+    {
+      "id": "1b704711-1a93-435b-adaf-bb06ae89e4ef",
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "step_number": 3,
+      "instruction": "Réunir les mélanges et incorporer les pépites. Ne pas battre longuement.",
+      "duration_seconds": null
+    },
+    {
+      "id": "948c49dc-b95e-412b-a4a6-c59bef5ed54f",
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "step_number": 4,
+      "instruction": "Remplir les moules aux deux tiers et cuire environ 20 minutes. Une lame doit ressortir sans pâte crue.",
+      "duration_seconds": 1200
+    },
+    {
+      "id": "e0b402c2-53d6-41b9-a70a-207cef3f0592",
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "step_number": 5,
+      "instruction": "Laisser tiédir avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "02bffa01-ac7b-489f-ad90-256068867102",
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "step_number": 1,
+      "instruction": "Préchauffer le four à 180 °C en chaleur traditionnelle. Couvrir une plaque de papier cuisson.",
+      "duration_seconds": null
+    },
+    {
+      "id": "7bf781e2-b7f7-4aa8-a0ef-008b31a166ff",
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "step_number": 2,
+      "instruction": "Travailler le beurre mou avec le sucre. Ajouter l’œuf, puis farine, levure et sel.",
+      "duration_seconds": null
+    },
+    {
+      "id": "ec04b989-ddd4-4062-a2fa-9ebceb5b84a2",
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "step_number": 3,
+      "instruction": "Incorporer les pépites. Former 10 tas espacés et les aplatir légèrement.",
+      "duration_seconds": null
+    },
+    {
+      "id": "080c47cb-1a1e-4f22-ad66-65f2d5ff8188",
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "step_number": 4,
+      "instruction": "Cuire environ 12 minutes, jusqu’à ce que les bords soient dorés et le centre encore tendre.",
+      "duration_seconds": 720
+    },
+    {
+      "id": "0e512596-417b-4823-a32a-5b6684d12af8",
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "step_number": 5,
+      "instruction": "Laisser les cookies se raffermir sur la plaque pendant 10 minutes avant de les déplacer.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "89b99fba-c85e-4ab1-a386-1547a9361ad4",
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "step_number": 1,
+      "instruction": "Préchauffer le four à 180 °C en chaleur traditionnelle. Préparer une plaque avec du papier cuisson.",
+      "duration_seconds": null
+    },
+    {
+      "id": "f238e13c-5b61-49e9-afbd-de4b626c2e37",
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "step_number": 2,
+      "instruction": "Écraser les bananes puis mélanger avec les flocons d’avoine, la cannelle et les pépites.",
+      "duration_seconds": null
+    },
+    {
+      "id": "df46ea58-d331-4324-a134-d00f56da0aa1",
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "step_number": 3,
+      "instruction": "Laisser les flocons absorber l’humidité pendant 5 minutes. Former 8 petits palets sur la plaque.",
+      "duration_seconds": 300
+    },
+    {
+      "id": "8d385ddb-b1d4-405f-a531-024fd5c2ab65",
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "step_number": 4,
+      "instruction": "Cuire environ 15 minutes, jusqu’à ce que les palets soient pris et légèrement dorés.",
+      "duration_seconds": 900
+    },
+    {
+      "id": "01ab8a51-450a-4a8e-adb6-5ec4e92298e7",
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "step_number": 5,
+      "instruction": "Laisser refroidir avant de déplacer. La texture reste souple, différente d’un cookie au beurre.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4687e918-0b18-45ea-aef6-c2e196bf3924",
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "step_number": 1,
+      "instruction": "Mélanger le beurre mou, le sucre et la vanille. Ajouter l’œuf, puis la farine ; former une pâte sans trop pétrir.",
+      "duration_seconds": null
+    },
+    {
+      "id": "ac3c3fac-9e3a-46a0-afdb-79bce2dc47f6",
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "step_number": 2,
+      "instruction": "Envelopper la pâte et la placer au réfrigérateur pendant 30 minutes.",
+      "duration_seconds": 1800
+    },
+    {
+      "id": "e38834c5-02b3-4157-accd-0e33659bc096",
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "step_number": 3,
+      "instruction": "Préchauffer le four à 180 °C. Étaler la pâte sur environ 5 mm d’épaisseur et découper 12 biscuits.",
+      "duration_seconds": null
+    },
+    {
+      "id": "e12250fa-bac2-474a-a469-cc1dc7783134",
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "step_number": 4,
+      "instruction": "Déposer sur une plaque avec du papier cuisson. Cuire environ 12 minutes, jusqu’à ce que les bords soient légèrement dorés.",
+      "duration_seconds": 720
+    },
+    {
+      "id": "a0f1735b-865b-4313-aadb-6c536449b0bd",
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "step_number": 5,
+      "instruction": "Laisser refroidir avant de manipuler.",
+      "duration_seconds": null
+    },
+    {
+      "id": "9c7c2caf-2058-4308-ab15-c3fb7cdd9f20",
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "step_number": 1,
+      "instruction": "Préchauffer le four à 180 °C en chaleur traditionnelle. Beurrer 6 petits moules.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0b2c64f3-c3da-4f52-aada-1c84141c8ae0",
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "step_number": 2,
+      "instruction": "Faire fondre le beurre à feu doux puis le laisser tiédir.",
+      "duration_seconds": null
+    },
+    {
+      "id": "fc4ccbf6-603a-4e91-a9bb-779260496b42",
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "step_number": 3,
+      "instruction": "Mélanger sucre glace, poudre d’amande et farine. Ajouter les blancs d’œufs non montés, puis le beurre fondu.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4961d8f6-9ab3-4a0e-a6a0-7eb87fead2fa",
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "step_number": 4,
+      "instruction": "Répartir la pâte dans les moules et cuire environ 15 minutes, jusqu’à ce que les bords soient dorés et le centre pris.",
+      "duration_seconds": 900
+    },
+    {
+      "id": "af6d60f9-2ea2-4b06-aeb6-266774bd9b91",
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "step_number": 5,
+      "instruction": "Laisser tiédir 10 minutes avant de démouler.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "a8462870-0126-491f-adeb-97b467bdad35",
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "step_number": 1,
+      "instruction": "Laver les tomates et le concombre. Les couper en morceaux. Émincer finement l’oignon rouge.",
+      "duration_seconds": null
+    },
+    {
+      "id": "1a73404b-c7e3-4856-a8ec-3096748cf45f",
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "step_number": 2,
+      "instruction": "Émietter la feta et mélanger avec les légumes.",
+      "duration_seconds": null
+    },
+    {
+      "id": "c1d6867d-ce31-4f78-a03e-d5b18a431db9",
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "step_number": 3,
+      "instruction": "Fouetter l’huile, le jus de citron, l’origan et le poivre.",
+      "duration_seconds": null
+    },
+    {
+      "id": "539738c3-316e-45f0-a989-9af9c376e9c8",
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "step_number": 4,
+      "instruction": "Assaisonner juste avant de servir. Goûter avant d’ajouter du sel, car la feta est déjà salée.",
+      "duration_seconds": null
+    },
+    {
+      "id": "0f529386-45e8-47a8-a77f-6aa55388f467",
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "step_number": 1,
+      "instruction": "Laver et essorer la salade. Laver la pomme, retirer le trognon et couper en fines lamelles.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4cbfcef2-05ad-480d-afad-61c58463ea4b",
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "step_number": 2,
+      "instruction": "Couper le fromage en dés et concasser les noix.",
+      "duration_seconds": null
+    },
+    {
+      "id": "62f34940-0496-44ce-aee6-7372a43d8b3e",
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "step_number": 3,
+      "instruction": "Mélanger la moutarde avec le vinaigre, puis ajouter l’huile en fouettant.",
+      "duration_seconds": null
+    },
+    {
+      "id": "2e3fe557-cd93-47d9-a1e6-84f4b8d6231d",
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "step_number": 4,
+      "instruction": "Réunir salade, pomme, fromage et noix. Ajouter la vinaigrette au dernier moment.",
+      "duration_seconds": null
+    },
+    {
+      "id": "a41d02be-e099-465e-ac34-83a2d0544de7",
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "step_number": 1,
+      "instruction": "Cuire les pâtes selon le paquet, environ 10 minutes. Les égoutter, les refroidir rapidement sous l’eau froide puis bien égoutter.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "fe7c9d70-8123-4272-a318-c9fb27ea557a",
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "step_number": 2,
+      "instruction": "Laver et couper les tomates. Égoutter le thon et le maïs ; émietter le thon.",
+      "duration_seconds": null
+    },
+    {
+      "id": "5bf66392-abb3-4ab6-ab29-01f636359b40",
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "step_number": 3,
+      "instruction": "Mélanger huile d’olive, jus de citron, persil ciselé et poivre.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b0ea543b-14f7-4765-ab3d-71cbeaa03fc3",
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "step_number": 4,
+      "instruction": "Réunir tous les ingrédients avec les pâtes froides. Mélanger et servir, ou placer rapidement au réfrigérateur.",
+      "duration_seconds": null
+    },
+    {
+      "id": "3d2b9672-99fd-470e-afab-a55ee2b274e6",
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "step_number": 1,
+      "instruction": "Cuire les pâtes selon le paquet. Les égoutter, les refroidir rapidement sous l’eau froide et bien égoutter.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "6dcbacc1-cd11-464d-acf5-f53b67e809f8",
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "step_number": 2,
+      "instruction": "Laver les tomates cerises et les couper en deux. Égoutter la mozzarella et la couper en morceaux. Laver et essorer la roquette.",
+      "duration_seconds": null
+    },
+    {
+      "id": "a3013ad1-ee98-4e8d-aa1a-fa007d010b51",
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "step_number": 3,
+      "instruction": "Détendre le pesto avec l’huile d’olive puis l’ajouter aux pâtes froides.",
+      "duration_seconds": null
+    },
+    {
+      "id": "ed1532ab-26a9-4bc3-ac46-dea089a8e771",
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "step_number": 4,
+      "instruction": "Ajouter tomates et mozzarella. Incorporer la roquette juste avant de servir pour garder son croquant.",
+      "duration_seconds": null
+    },
+    {
+      "id": "4cdd0918-6f11-442f-afc1-bde3d5a999a6",
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "step_number": 1,
+      "instruction": "Rincer et égoutter les pois chiches. Laver les légumes et le persil.",
+      "duration_seconds": null
+    },
+    {
+      "id": "08f66d2a-6bf6-4b7b-a643-c60583070d52",
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "step_number": 2,
+      "instruction": "Couper concombre et tomates en petits dés. Émincer l’oignon et ciseler le persil.",
+      "duration_seconds": null
+    },
+    {
+      "id": "e28f870c-ef6a-48c4-ad6c-0b53a779328d",
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "step_number": 3,
+      "instruction": "Mélanger l’huile, le citron, le cumin et le sel.",
+      "duration_seconds": null
+    },
+    {
+      "id": "05108690-c166-455e-a856-eebf3787ac04",
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "step_number": 4,
+      "instruction": "Réunir tous les ingrédients, mélanger et goûter. Servir frais, avec la sauce bien répartie.",
+      "duration_seconds": null
+    },
+    {
+      "id": "202e151e-e480-44bd-aee1-e9ea0233a6cd",
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "step_number": 1,
+      "instruction": "Cuire le riz selon le paquet. Égoutter et refroidir rapidement sous l’eau froide, puis bien égoutter.",
+      "duration_seconds": null
+    },
+    {
+      "id": "2a8cc6fe-1d4c-4ec2-adb3-082af22a534b",
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "step_number": 2,
+      "instruction": "Pendant la cuisson du riz, cuire les œufs dans l’eau frémissante environ 10 minutes. Refroidir sous l’eau froide, écaler et couper en quartiers.",
+      "duration_seconds": 600
+    },
+    {
+      "id": "a5d78445-66b1-49c5-a13b-378126deda09",
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "step_number": 3,
+      "instruction": "Laver les tomates et le concombre, puis les couper en dés. Égoutter le maïs.",
+      "duration_seconds": null
+    },
+    {
+      "id": "f943486a-9219-4ed8-a9f5-ea314ccdcec1",
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "step_number": 4,
+      "instruction": "Fouetter la moutarde, le vinaigre et l’huile. Mélanger avec le riz froid et les légumes.",
+      "duration_seconds": null
+    },
+    {
+      "id": "b623ff64-9c3c-4cfd-a08d-6ada29d9d5d7",
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "step_number": 5,
+      "instruction": "Ajouter les œufs délicatement. Servir ou placer rapidement au réfrigérateur.",
+      "duration_seconds": null
+    }
+  ],
+  "recipe_tags": [
+    {
+      "recipe_id": "ecade815-4fcc-4dc5-ae47-c8f695bd3b6e",
+      "tag_id": "9394221e-2f26-4296-9ea6-0e60c71b0f32"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "309fdcae-e04b-44de-a326-1509e05fc9e9",
+      "tag_id": "4d3c3812-011b-4d13-ad16-f0894c882ea8"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "5b8179de-529e-4eaf-a418-6280b94c311b",
+      "tag_id": "0d8e4554-6228-47cc-adfe-85c1f6927788"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "4150d004-7947-4ef5-a089-874b0975b575",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "tag_id": "0d8e4554-6228-47cc-adfe-85c1f6927788"
+    },
+    {
+      "recipe_id": "82310613-83a5-4651-a124-859d48d78195",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "d25253a9-9583-4670-a323-7f53fe1d13eb",
+      "tag_id": "1174b1dc-7cd3-4c06-aa35-4bb4ead2d91a"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "7891053d-cf7e-41d4-a56a-cfadba167b7f",
+      "tag_id": "df8beb3d-cae4-4468-a5e4-dcf79557ab71"
+    },
+    {
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "9d93e165-bca7-4d23-ad66-21c7317e0835",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "87f89c9e-cd15-44c2-ab43-8c4e80040506",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "d0234d0a-10de-4840-a733-3be453bac869",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "c6e68d7a-4cbd-439a-afb7-25218fc1f35b",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "6eb15dc1-08b1-44c6-a87a-b9bc1d022c53",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "a6219e55-e367-4f97-acc6-31428357e358",
+      "tag_id": "8df7b220-8db7-4683-a9cb-3d56d8a16cb3"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "31802161-a38a-4e6f-aadd-d742a96b562d",
+      "tag_id": "b5a71c66-e151-41db-a408-1d401e013f33"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "tag_id": "2bfa3908-f5b0-49fd-a440-7619bd224dff"
+    },
+    {
+      "recipe_id": "79357033-4418-46cd-af4a-6f8712a31397",
+      "tag_id": "dff0bf01-6665-4d2f-a8ea-8a00a4ade2f5"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "d45281aa-d55f-4afa-a998-032e62be4dd5",
+      "tag_id": "ce39a122-f56b-4c23-a300-b7af74b8afa0"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "3ca05bef-e5e4-4d91-ae8f-ae95a2155be0",
+      "tag_id": "b5a71c66-e151-41db-a408-1d401e013f33"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "00d5e50f-d468-430f-ab75-206d4f18886f",
+      "tag_id": "dff0bf01-6665-4d2f-a8ea-8a00a4ade2f5"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "f2f053ed-abbd-4b82-ac49-3333bee87257",
+      "tag_id": "77e4772b-fd97-4a4a-a9f5-908a5ae9128f"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "dd78b738-accc-4ce5-a8d6-548c2240e73d",
+      "tag_id": "3a4c72d6-3002-4896-a11b-a71bdf0b6ff7"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "0677a067-f7af-4dd0-ac82-7e3d812b6bc4",
+      "tag_id": "0d8e4554-6228-47cc-adfe-85c1f6927788"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "4484cfa6-28d3-492e-a039-8d9d38cd6595",
+      "tag_id": "0d8e4554-6228-47cc-adfe-85c1f6927788"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "1a1e4306-e6c1-45a7-a745-fac2819e7fb6",
+      "tag_id": "5fd20974-8b2b-487d-a7e7-16886cfa2df5"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "55b55111-7b25-40a2-aeee-6c22873e3077",
+      "tag_id": "4d3c3812-011b-4d13-ad16-f0894c882ea8"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "tag_id": "741c55f7-2aab-4735-a0d9-1d995199d3d0"
+    },
+    {
+      "recipe_id": "da14b00c-b5e7-461c-aa28-c751e7a1b006",
+      "tag_id": "df8beb3d-cae4-4468-a5e4-dcf79557ab71"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "tag_id": "e16244c3-8f6f-478d-ad85-e9bf86b7c100"
+    },
+    {
+      "recipe_id": "8116b467-0841-4ec2-a93b-4f19f1744ae7",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "tag_id": "e16244c3-8f6f-478d-ad85-e9bf86b7c100"
+    },
+    {
+      "recipe_id": "d415b65d-8c90-4110-adb0-45049cbede11",
+      "tag_id": "df8beb3d-cae4-4468-a5e4-dcf79557ab71"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "tag_id": "7b95efff-9947-4bdb-a74f-3433751d48b5"
+    },
+    {
+      "recipe_id": "951f6f22-2a59-496c-a4c8-60cba03754c6",
+      "tag_id": "60bd1883-e4ee-40ae-a48e-f483ce3459ef"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "tag_id": "7b95efff-9947-4bdb-a74f-3433751d48b5"
+    },
+    {
+      "recipe_id": "52c49858-3053-46dc-a638-5ae620495296",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "tag_id": "e16244c3-8f6f-478d-ad85-e9bf86b7c100"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "tag_id": "77e4772b-fd97-4a4a-a9f5-908a5ae9128f"
+    },
+    {
+      "recipe_id": "02285819-f146-4533-a6e3-cedeaed2bf64",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "tag_id": "dff0bf01-6665-4d2f-a8ea-8a00a4ade2f5"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "tag_id": "ce39a122-f56b-4c23-a300-b7af74b8afa0"
+    },
+    {
+      "recipe_id": "9d99275d-862e-486c-a0db-7060c1511304",
+      "tag_id": "53b0e1ed-07dd-4ee4-a3e6-279609d49966"
+    }
+  ]
+}

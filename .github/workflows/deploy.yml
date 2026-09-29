@@ -17,10 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-      VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,14 +24,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build app
-        run: npm run build
+        # Validate the public catalogue before publishing it.
+        run: npm test && npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

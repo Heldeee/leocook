@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import {
   Container,
@@ -12,19 +12,19 @@ import {
   Stack,
   Alert,
   Paper,
-  ToggleButtonGroup,
-  ToggleButton,
+  MenuItem,
 } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import DeleteIcon from '@mui/icons-material/Delete'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
-import DragIndicatorIcon from '@mui/icons-material/DragIndicator'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import PreviewIcon from '@mui/icons-material/Preview'
 
-import { supabase } from '../lib/supabaseClient'
+import { referenceData, getRecipe, saveRecipe as saveCatalogueRecipe } from '../lib/catalogue'
 import { useUser } from '../context/UserContext'
 import RecipeImage from '../components/RecipeImage'
-import { suggestTagsFromTitle } from '../utils/levenshtein'
+import { CATEGORIES } from '../lib/recipePresentation'
 
 const emptyIngredientRow = () => ({
   ingredientName: '',
@@ -58,19 +58,22 @@ function FormSection({ title, children }) {
 }
 
 export default function RecipeForm({ editMode = false }) {
-  const { currentUser: user } = useUser()
+  const { currentUser: user, editing } = useUser()
   const navigate = useNavigate()
   const { id } = useParams()
   const location = useLocation()
 
   const [name, setName] = useState('')
+  const [category, setCategory] = useState('')
+  const [description, setDescription] = useState('')
+  const [notes, setNotes] = useState('')
+  const [prepMinutes, setPrepMinutes] = useState('')
+  const [cookMinutes, setCookMinutes] = useState('')
   const [servings, setServings] = useState(4)
   const [imageFile, setImageFile] = useState(null)
   const [imagePreview, setImagePreview] = useState(null)
   const [existingImageUrl, setExistingImageUrl] = useState(null)
-  const [isPrivate, setIsPrivate] = useState(true)
 
-  const [familyId, setFamilyId] = useState('')
 
   const [units, setUnits] = useState([])
   const [existingIngredients, setExistingIngredients] = useState([])
@@ -91,7 +94,7 @@ export default function RecipeForm({ editMode = false }) {
 
   /*
    * ------------------------------------------------------------
-   * Chargement des dictionnaires + famille
+   * Chargement des dictionnaires
    * ------------------------------------------------------------
    */
 
@@ -99,44 +102,7 @@ export default function RecipeForm({ editMode = false }) {
     if (!user) return
 
     async function loadReferenceData() {
-      const [
-        { data: familyRows },
-        { data: unitRows },
-        { data: ingredientRowsData },
-        { data: tagRows },
-      ] = await Promise.all([
-        supabase
-          .from('family_members')
-          .select('family_id, families(id, name)')
-          .eq('user_id', user.id),
-
-        supabase
-          .from('units')
-          .select('id, name, abbreviation')
-          .order('name'),
-
-        supabase
-          .from('ingredients')
-          .select('id, name')
-          .order('name'),
-
-        supabase
-          .from('tags')
-          .select('id, name')
-          .order('name'),
-      ])
-
-      const families = (familyRows ?? [])
-        .map((row) => row.families)
-        .filter(Boolean)
-
-      /*
-       * L'utilisateur appartient à une seule famille.
-       * On ne l'affiche donc plus dans le formulaire.
-       */
-      if (families.length > 0) {
-        setFamilyId(families[0].id)
-      }
+      const { units: unitRows, ingredients: ingredientRowsData, tags: tagRows } = await referenceData()
 
       setUnits(unitRows ?? [])
       setExistingIngredients(ingredientRowsData ?? [])
@@ -153,58 +119,26 @@ export default function RecipeForm({ editMode = false }) {
    */
 
   useEffect(() => {
-    if (!editMode || !id || !user) return
+    if (!editMode || !id || !user || location.state?.recipe || location.state?.confirmRecipe) return
 
     async function loadRecipe() {
       setInitialLoading(true)
 
       try {
-        const { data: recipe, error: recipeError } = await supabase
-          .from('recipes')
-          .select('*')
-          .eq('id', id)
-          .single()
-
-        if (recipeError) throw recipeError
-
+        const recipe = await getRecipe(id)
         setName(recipe.name)
+        setCategory(recipe.category ?? '')
+        setDescription(recipe.description ?? '')
+        setNotes(recipe.notes ?? '')
+        setPrepMinutes(recipe.prep_minutes ?? '')
+        setCookMinutes(recipe.cook_minutes ?? '')
         setServings(recipe.servings)
-        setIsPrivate(recipe.private)
-        setFamilyId(recipe.family_id)
         setExistingImageUrl(recipe.image_url)
-
-        const { data: ingredients } = await supabase
-          .from('recipe_ingredients')
-          .select(
-            'quantity, unit_id, ingredients(id, name)'
-          )
-          .eq('recipe_id', id)
-
-        setIngredientRows(
-          (ingredients ?? []).map((row) => ({
-            ingredientName: row.ingredients?.name ?? '',
-            quantity: row.quantity ?? '',
-            unitId: row.unit_id ?? '',
-          }))
-        )
-
-        const { data: tags } = await supabase
-          .from('recipe_tags')
-          .select('tags(id, name)')
-          .eq('recipe_id', id)
-
-        setSelectedTags(
-          (tags ?? [])
-            .map((row) => row.tags)
-            .filter(Boolean)
-        )
-
-        const { data: steps } = await supabase
-          .from('recipe_steps')
-          .select('*')
-          .eq('recipe_id', id)
-          .order('step_number')
-
+        setIngredientRows(recipe.ingredients.map(row => ({
+          ingredientName: row.ingredients?.name ?? '', quantity: row.quantity ?? '', unitId: row.unit_id ?? '',
+        })))
+        setSelectedTags(recipe.tags)
+        const steps = recipe.steps
         setStepRows(
           (steps ?? []).map((step) => ({
             instruction: step.instruction,
@@ -221,7 +155,25 @@ export default function RecipeForm({ editMode = false }) {
     }
 
     loadRecipe()
-  }, [editMode, id, user])
+  }, [editMode, id, user, location.state?.recipe, location.state?.confirmRecipe])
+
+  useEffect(() => {
+    const restored = location.state?.recipe ?? location.state?.confirmRecipe
+    if (!restored) return
+    setName(restored.name)
+    setCategory(restored.category ?? '')
+    setDescription(restored.description ?? '')
+    setNotes(restored.notes ?? '')
+    setPrepMinutes(restored.prep_minutes ?? '')
+    setCookMinutes(restored.cook_minutes ?? '')
+    setServings(restored.servings)
+    setImageFile(restored.imageFile ?? null)
+    setExistingImageUrl(restored.imageFile ? null : restored.imageUrl)
+    setIngredientRows(restored.ingredients.map(row => ({ ingredientName: row.ingredientName, quantity: row.quantity, unitId: row.unitId })))
+    setSelectedTags(restored.tags)
+    setStepRows(restored.steps.map(step => ({ instruction: step.instruction, durationMinutes: step.durationMinutes ?? '' })))
+    setInitialLoading(false)
+  }, [location.state?.recipe, location.state?.confirmRecipe])
 
   /*
    * ------------------------------------------------------------
@@ -277,45 +229,6 @@ export default function RecipeForm({ editMode = false }) {
     return existingIngredients.map((ingredient) => ingredient.name)
   }, [existingIngredients])
 
-  /*
-   * ------------------------------------------------------------
-   * Tags automatiques
-   * ------------------------------------------------------------
-   */
-
-  useEffect(() => {
-    if (!name.trim() || existingTags.length === 0) return
-
-    const suggestions = suggestTagsFromTitle(
-      name,
-      existingTags
-    )
-
-    if (suggestions.length === 0) return
-
-    setSelectedTags((current) => {
-      const existingIds = new Set(
-        current
-          .filter((tag) => tag.id)
-          .map((tag) => tag.id)
-      )
-
-      const additions = suggestions.filter(
-        (tag) => !existingIds.has(tag.id)
-      )
-
-      return [...current, ...additions]
-    })
-  }, [name, existingTags])
-
-  /*
-   * ------------------------------------------------------------
-   * Drag & drop des étapes
-   * ------------------------------------------------------------
-   */
-
-  const [draggedStepIndex, setDraggedStepIndex] = useState(null)
-
   const moveStep = (from, to) => {
     if (from === to) return
 
@@ -336,17 +249,20 @@ export default function RecipeForm({ editMode = false }) {
   const buildPreviewData = () => ({
     id: editMode ? id : null,
     name: name.trim(),
+    category, description, notes,
+    prep_minutes: prepMinutes === '' ? undefined : Number(prepMinutes),
+    cook_minutes: cookMinutes === '' ? (category === 'compotes' ? null : undefined) : Number(cookMinutes),
     servings: Number(servings) || 1,
     imageUrl: imagePreview,
     imageFile,
-    private: isPrivate,
-    familyId,
+
+
 
     ingredients: ingredientRows
       .filter(
         (row) =>
           row.ingredientName.trim() &&
-          row.quantity &&
+          row.quantity !== '' && row.quantity != null &&
           row.unitId
       )
       .map((row) => {
@@ -392,13 +308,9 @@ export default function RecipeForm({ editMode = false }) {
       return
     }
 
-    if (!familyId) {
-      setError(
-        'Aucune famille n’est associée à ton compte.'
-      )
-      return
-    }
 
+    if (!Number.isInteger(Number(servings)) || Number(servings) < 1 || Number(servings) > 24) { setError('Choisis entre 1 et 24 portions entières.'); return }
+    if (ingredientRows.some(row => (row.ingredientName.trim() || row.quantity !== '' || row.unitId) && (!row.ingredientName.trim() || row.quantity === '' || !row.unitId || !Number.isFinite(Number(row.quantity)) || Number(row.quantity) < 0))) { setError('Complète le nom, la quantité et l’unité de chaque ingrédient, ou supprime la ligne incomplète.'); return }
     navigate('/recipes/preview', {
       state: {
         recipe: buildPreviewData(),
@@ -413,293 +325,13 @@ export default function RecipeForm({ editMode = false }) {
    * ------------------------------------------------------------
    */
 
-  const saveRecipe = async (previewData) => {
+  const saveRecipe = useCallback(async (previewData) => {
     setLoading(true)
     setError('')
 
     try {
-      let imageUrl =
-        existingImageUrl ||
-        previewData.imageUrl ||
-        null
-
-      // ---------------------------------------------------------
-      // IMAGE
-      // ---------------------------------------------------------
-
-      if (previewData.imageFile) {
-        const path = `${user.id}/${Date.now()}-${previewData.imageFile.name}`
-
-        const { error: uploadError } =
-          await supabase.storage
-            .from('recipe-images')
-            .upload(path, previewData.imageFile)
-
-        if (uploadError) throw uploadError
-
-        const { data: publicUrlData } =
-          supabase.storage
-            .from('recipe-images')
-            .getPublicUrl(path)
-
-        imageUrl = publicUrlData.publicUrl
-      }
-
-      // ---------------------------------------------------------
-      // RECIPE
-      // ---------------------------------------------------------
-
-      let recipeId = previewData.id
-
-      if (editMode) {
-        const { error } = await supabase
-          .from('recipes')
-          .update({
-            name: previewData.name,
-            family_id: previewData.familyId,
-            private: previewData.private,
-            servings: previewData.servings,
-            image_url: imageUrl,
-          })
-          .eq('id', recipeId)
-
-        if (error) throw error
-      } else {
-        const { data, error } = await supabase
-          .from('recipes')
-          .insert({
-            name: previewData.name,
-            author_id: user.id,
-            family_id: previewData.familyId,
-            private: previewData.private,
-            servings: previewData.servings,
-            image_url: imageUrl,
-          })
-          .select()
-          .single()
-
-        if (error) throw error
-
-        recipeId = data.id
-      }
-
-      // ---------------------------------------------------------
-      // INGREDIENTS
-      // ---------------------------------------------------------
-
-      const ingredientRelations = []
-
-      for (const ingredient of previewData.ingredients) {
-        const ingredientName =
-          ingredient.ingredientName.trim()
-
-        if (!ingredientName) continue
-
-        // Cherche d'abord l'ingrédient existant
-        const { data: existingIngredient, error: findError } =
-          await supabase
-            .from('ingredients')
-            .select('id, name')
-            .ilike('name', ingredientName)
-            .maybeSingle()
-
-        if (findError) throw findError
-
-        let ingredientId = existingIngredient?.id
-
-        // Création uniquement s'il n'existe pas
-        if (!ingredientId) {
-          const { data: newIngredient, error } =
-            await supabase
-              .from('ingredients')
-              .insert({
-                name: ingredientName,
-                default_unit_id: ingredient.unitId,
-              })
-              .select('id')
-              .single()
-
-          if (error) {
-            // Une autre ligne pourrait avoir créé
-            // l'ingrédient entre le SELECT et l'INSERT.
-            if (error.code === '23505') {
-              const { data: retryIngredient } =
-                await supabase
-                  .from('ingredients')
-                  .select('id')
-                  .ilike('name', ingredientName)
-                  .maybeSingle()
-
-              if (!retryIngredient) {
-                throw error
-              }
-
-              ingredientId = retryIngredient.id
-            } else {
-              throw error
-            }
-          } else {
-            ingredientId = newIngredient.id
-          }
-        }
-
-        ingredientRelations.push({
-          recipe_id: recipeId,
-          ingredient_id: ingredientId,
-          quantity: Number(ingredient.quantity),
-          unit_id: ingredient.unitId,
-        })
-      }
-
-      // ---------------------------------------------------------
-      // TAGS
-      // ---------------------------------------------------------
-
-      const tagIds = new Set()
-
-      for (const tag of previewData.tags) {
-        const tagName = tag.name?.trim()
-
-        if (!tagName) continue
-
-        let tagId = tag.id
-
-        if (!tagId) {
-          const { data: existingTag, error } =
-            await supabase
-              .from('tags')
-              .select('id')
-              .ilike('name', tagName)
-              .maybeSingle()
-
-          if (error) throw error
-
-          if (existingTag) {
-            tagId = existingTag.id
-          } else {
-            const { data: newTag, error } =
-              await supabase
-                .from('tags')
-                .insert({
-                  name: tagName,
-                })
-                .select('id')
-                .single()
-
-            if (error) {
-              if (error.code === '23505') {
-                const { data: retryTag } =
-                  await supabase
-                    .from('tags')
-                    .select('id')
-                    .ilike('name', tagName)
-                    .maybeSingle()
-
-                if (!retryTag) throw error
-
-                tagId = retryTag.id
-              } else {
-                throw error
-              }
-            } else {
-              tagId = newTag.id
-            }
-          }
-        }
-
-        tagIds.add(tagId)
-      }
-
-      // ---------------------------------------------------------
-      // RELATIONS
-      //
-      // On supprime seulement maintenant que la recette principale
-      // et les dictionnaires sont valides.
-      // ---------------------------------------------------------
-
-      const { error: deleteIngredientsError } =
-        await supabase
-          .from('recipe_ingredients')
-          .delete()
-          .eq('recipe_id', recipeId)
-
-      if (deleteIngredientsError) {
-        throw deleteIngredientsError
-      }
-
-      const { error: deleteTagsError } =
-        await supabase
-          .from('recipe_tags')
-          .delete()
-          .eq('recipe_id', recipeId)
-
-      if (deleteTagsError) {
-        throw deleteTagsError
-      }
-
-      const { error: deleteStepsError } =
-        await supabase
-          .from('recipe_steps')
-          .delete()
-          .eq('recipe_id', recipeId)
-
-      if (deleteStepsError) {
-        throw deleteStepsError
-      }
-
-      // ---------------------------------------------------------
-      // INSERT INGREDIENT RELATIONS
-      // ---------------------------------------------------------
-
-      if (ingredientRelations.length > 0) {
-        const { error } = await supabase
-          .from('recipe_ingredients')
-          .insert(ingredientRelations)
-
-        if (error) throw error
-      }
-
-      // ---------------------------------------------------------
-      // INSERT TAG RELATIONS
-      // ---------------------------------------------------------
-
-      if (tagIds.size > 0) {
-        const tagRelations = [...tagIds].map((tagId) => ({
-          recipe_id: recipeId,
-          tag_id: tagId,
-        }))
-
-        const { error } = await supabase
-          .from('recipe_tags')
-          .insert(tagRelations)
-
-        if (error) throw error
-      }
-
-      // ---------------------------------------------------------
-      // INSERT STEPS
-      // ---------------------------------------------------------
-
-      const steps = previewData.steps
-        .filter(
-          (step) => step.instruction?.trim()
-        )
-        .map((step, index) => ({
-          recipe_id: recipeId,
-          step_number: index + 1,
-          instruction: step.instruction.trim(),
-          duration_seconds:
-            step.duration_seconds ?? null,
-        }))
-
-      if (steps.length > 0) {
-        const { error } = await supabase
-          .from('recipe_steps')
-          .insert(steps)
-
-        if (error) throw error
-      }
-
+      if (!editing) throw new Error('Active le mode édition depuis Catalogue.')
+      const recipeId = await saveCatalogueRecipe(previewData, editMode)
       navigate(`/recipes/${recipeId}`)
     } catch (err) {
       console.error(
@@ -713,16 +345,19 @@ export default function RecipeForm({ editMode = false }) {
       )
     } finally {
       setLoading(false)
+      setInitialLoading(false)
     }
-  }
+  }, [editing, editMode, navigate])
 
   /*
    * Permet à RecipePreview de confirmer.
    */
+  const confirmationStarted = useRef(false)
   useEffect(() => {
     const confirmation = location.state?.confirmRecipe
 
-    if (!confirmation) return
+    if (!confirmation || confirmationStarted.current) return
+    confirmationStarted.current = true
 
     navigate(location.pathname, {
       replace: true,
@@ -730,17 +365,16 @@ export default function RecipeForm({ editMode = false }) {
     })
 
     saveRecipe(confirmation)
-  }, [])
+  }, [location.state?.confirmRecipe, location.pathname, navigate, saveRecipe])
 
-  if (!user) {
+  if (!editing) {
     return (
       <Container
         maxWidth="sm"
         sx={{ py: 4, px: 2 }}
       >
         <Alert severity="warning">
-          Choisis d'abord qui tu es dans l'onglet
-          "Profil".
+          Active le mode édition depuis l’onglet Catalogue.
         </Alert>
       </Container>
     )
@@ -772,6 +406,8 @@ export default function RecipeForm({ editMode = false }) {
           : 'Nouvelle recette'}
       </Typography>
 
+      <Alert severity="info" sx={{ mb: 2 }}>Enregistrement sur cet appareil. Publie ensuite ton brouillon depuis Catalogue pour le partager.</Alert>
+
       {error && (
         <Alert
           severity="error"
@@ -797,6 +433,16 @@ export default function RecipeForm({ editMode = false }) {
               fullWidth
             />
 
+            <TextField select fullWidth label="Catégorie" value={category} onChange={event => setCategory(event.target.value)}>
+              <MenuItem value="">Mon carnet</MenuItem>
+              {CATEGORIES.map(item => <MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)}
+            </TextField>
+            <TextField label="Description" value={description} onChange={event => setDescription(event.target.value)} multiline minRows={2} fullWidth />
+            <Stack direction="row" spacing={1.5}>
+              <TextField label="Préparation (min)" type="number" value={prepMinutes} onChange={event => setPrepMinutes(event.target.value)} inputProps={{ min: 0, step: 1 }} fullWidth />
+              <TextField label="Cuisson (min)" type="number" value={cookMinutes} onChange={event => setCookMinutes(event.target.value)} inputProps={{ min: 0, step: 1 }} fullWidth />
+            </Stack>
+            <TextField label="Conseils et matériel" value={notes} onChange={event => setNotes(event.target.value)} multiline minRows={2} fullWidth />
             <TextField
               label="Portions"
               type="number"
@@ -804,33 +450,10 @@ export default function RecipeForm({ editMode = false }) {
               onChange={(e) =>
                 setServings(e.target.value)
               }
-              inputProps={{ min: 1 }}
+              inputProps={{ min: 1, max: 24, step: 1 }}
               fullWidth
             />
 
-            <ToggleButtonGroup
-              exclusive
-              fullWidth
-              value={
-                isPrivate
-                  ? 'private'
-                  : 'public'
-              }
-              onChange={(_, value) =>
-                value &&
-                setIsPrivate(
-                  value === 'private'
-                )
-              }
-            >
-              <ToggleButton value="private">
-                Famille uniquement
-              </ToggleButton>
-
-              <ToggleButton value="public">
-                Publique
-              </ToggleButton>
-            </ToggleButtonGroup>
 
             <Box>
               <RecipeImage
@@ -977,6 +600,7 @@ export default function RecipeForm({ editMode = false }) {
                       />
 
                       <IconButton
+                        aria-label={`Supprimer l’ingrédient ${i + 1}`}
                         color="error"
                         onClick={() =>
                           setIngredientRows(
@@ -1073,137 +697,19 @@ export default function RecipeForm({ editMode = false }) {
           </FormSection>
 
           <FormSection title="Étapes">
-            {stepRows.map(
-              (step, i) => (
-                <Box
-                  key={i}
-                  draggable
-                  onDragStart={() =>
-                    setDraggedStepIndex(i)
-                  }
-                  onDragOver={(e) =>
-                    e.preventDefault()
-                  }
-                  onDrop={() => {
-                    if (
-                      draggedStepIndex !==
-                      null
-                    ) {
-                      moveStep(
-                        draggedStepIndex,
-                        i
-                      )
-                    }
-
-                    setDraggedStepIndex(
-                      null
-                    )
-                  }}
-                  sx={{
-                    p: 1.5,
-                    border: '1px solid',
-                    borderColor:
-                      'divider',
-                    borderRadius: 2,
-                    cursor: 'grab',
-                  }}
-                >
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    alignItems="flex-start"
-                  >
-                    <DragIndicatorIcon
-                      sx={{
-                        mt: 1.5,
-                        color: 'text.secondary',
-                      }}
-                    />
-
-                    <Typography
-                      sx={{
-                        pt: 1.5,
-                        minWidth: 20,
-                        color:
-                          'text.secondary',
-                      }}
-                    >
-                      {i + 1}.
-                    </Typography>
-
-                    <TextField
-                      label="Instruction"
-                      value={
-                        step.instruction
-                      }
-                      onChange={(e) =>
-                        updateStepRow(
-                          i,
-                          'instruction',
-                          e.target.value
-                        )
-                      }
-                      sx={{
-                        flex: 1,
-                      }}
-                      multiline
-                      fullWidth
-                    />
-
-                    <TextField
-                      label="Min."
-                      type="number"
-                      value={
-                        step.durationMinutes
-                      }
-                      onChange={(e) =>
-                        updateStepRow(
-                          i,
-                          'durationMinutes',
-                          e.target.value
-                        )
-                      }
-                      sx={{
-                        width: 75,
-                      }}
-                    />
-
-                    <IconButton
-                      color="error"
-                      onClick={() =>
-                        setStepRows(
-                          (rows) =>
-                            rows.filter(
-                              (
-                                _,
-                                index
-                              ) =>
-                                index !==
-                                i
-                            )
-                        )
-                      }
-                    >
-                      <DeleteIcon />
-                    </IconButton>
-                  </Stack>
-                </Box>
-              )
-            )}
-
-            <Button
-              startIcon={<AddIcon />}
-              onClick={() =>
-                setStepRows(
-                  (rows) => [
-                    ...rows,
-                    emptyStepRow(),
-                  ]
-                )
-              }
-            >
-              Ajouter une étape
-            </Button>
+            {stepRows.map((step, i) => <Box key={i} sx={{ p: 2, border: '1px solid', borderColor: 'divider', borderRadius: 2 }}>
+              <Stack direction="row" sx={{ mb: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+                <Typography sx={{ fontWeight: 650 }}>Étape {i + 1}</Typography>
+                <Stack direction="row">
+                  <IconButton aria-label={`Monter l’étape ${i + 1}`} disabled={i === 0} onClick={() => moveStep(i, i - 1)}><ArrowUpwardIcon /></IconButton>
+                  <IconButton aria-label={`Descendre l’étape ${i + 1}`} disabled={i === stepRows.length - 1} onClick={() => moveStep(i, i + 1)}><ArrowDownwardIcon /></IconButton>
+                  <IconButton aria-label={`Supprimer l’étape ${i + 1}`} color="error" onClick={() => setStepRows(rows => rows.filter((_, index) => index !== i))}><DeleteIcon /></IconButton>
+                </Stack>
+              </Stack>
+              <TextField label="Instruction" value={step.instruction} onChange={event => updateStepRow(i, 'instruction', event.target.value)} multiline minRows={2} fullWidth />
+              <TextField label="Minuteur (min)" type="number" value={step.durationMinutes} onChange={event => updateStepRow(i, 'durationMinutes', event.target.value)} inputProps={{ min: 0, step: 1 }} helperText="Facultatif, démarré manuellement en mode cuisine." sx={{ mt: 2, width: '100%' }} />
+            </Box>)}
+            <Button startIcon={<AddIcon />} onClick={() => setStepRows(rows => [...rows, emptyStepRow()])}>Ajouter une étape</Button>
           </FormSection>
 
           <Button

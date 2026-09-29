@@ -1,25 +1,19 @@
 import { useEffect, useState } from 'react'
 import { Container, Typography, List, ListItemButton, ListItemText, Divider } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { supabase } from '../lib/supabaseClient'
-import { useUser } from '../context/UserContext'
+import { personalRecipes } from '../lib/catalogue'
 
 export default function Favorites() {
-  const { currentUser: user } = useUser()
   const navigate = useNavigate()
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
     async function load() {
-      const { data } = await supabase
-        .from('favorites')
-        .select('created_at, recipes(id, name, servings)')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false })
+      const data = await personalRecipes(false)
       setRecipes(data ?? [])
     }
-    if (user) load()
-  }, [user])
+    load()
+  }, [])
 
   return (
     <Container maxWidth="sm" sx={{ py: 3, px: { xs: 2, sm: 3 } }}>

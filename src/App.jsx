@@ -1,32 +1,46 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Box } from '@mui/material'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { Alert, Box, Button, Container, Typography } from '@mui/material'
 import { UserProvider } from './context/UserContext'
 import BottomNav, { BOTTOM_NAV_HEIGHT } from './components/BottomNav'
 import RecipeList from './pages/RecipeList'
-import RecipeForm from './pages/RecipeForm'
-import RecipePreview from './pages/RecipePreview'
-import RecipeDetail from './pages/RecipeDetail'
-import RecipeEdit from './pages/RecipeEdit'
-import Favorites from './pages/Favorites'
-import History from './pages/History'
-import Auth from './pages/Auth'
-import { useUser } from './context/UserContext'
+const RecipeForm = lazy(() => import('./pages/RecipeForm'))
+const RecipePreview = lazy(() => import('./pages/RecipePreview'))
+const RecipeDetail = lazy(() => import('./pages/RecipeDetail'))
+const RecipeEdit = lazy(() => import('./pages/RecipeEdit'))
+const Favorites = lazy(() => import('./pages/Favorites'))
+const History = lazy(() => import('./pages/History'))
+const CatalogueSettings = lazy(() => import('./pages/CatalogueSettings'))
+import { loadCatalogue, hasDraft, subscribeCatalogue } from './lib/catalogue'
 
 function AppContent() {
-  const { session, loading } = useUser()
-  if (loading) return null
-  if (!session) return <Auth />
-  return <><Box sx={{ pb: `calc(${BOTTOM_NAV_HEIGHT}px + env(safe-area-inset-bottom))` }}><Routes>
+  const { pathname } = useLocation()
+  const [ready, setReady] = useState(false)
+  const [error, setError] = useState('')
+  const [draft, setDraft] = useState(false)
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    const unsubscribe = subscribeCatalogue(() => setDraft(hasDraft()))
+    loadCatalogue().then(() => { setDraft(hasDraft()); setReady(true) }).catch(error => setError(error.message))
+    return unsubscribe
+  }, [])
+  if (error) return <Container sx={{ py: 4 }}><Alert severity="error">{error}</Alert><Button onClick={() => window.location.reload()}>Réessayer</Button></Container>
+  if (!ready) return <Container sx={{ py: 4 }}><Typography>Chargement du catalogue…</Typography></Container>
+  return <><Box sx={{ pb: `calc(${BOTTOM_NAV_HEIGHT}px + env(safe-area-inset-bottom))` }}>
+    {draft && <Alert severity="info">Brouillon sur cet appareil — publication disponible dans Catalogue.</Alert>}
+    <Suspense fallback={<Container sx={{ py: 4 }}>Chargement…</Container>}><Routes>
     <Route path="/" element={<RecipeList />} /><Route path="/recipes/new" element={<RecipeForm />} /><Route path="/recipes/preview" element={<RecipePreview />} /><Route path="/recipes/:id/edit" element={<RecipeEdit />} /><Route path="/recipes/:id" element={<RecipeDetail />} /><Route path="/favorites" element={<Favorites />} /><Route path="/history" element={<History />} />
-  </Routes></Box><BottomNav /></>
+    <Route path="/catalogue" element={<CatalogueSettings />} />
+    <Route path="*" element={<Container sx={{ py: 4 }}>Page introuvable.</Container>} />
+  </Routes></Suspense></Box><BottomNav /></>
 }
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <UserProvider>
         <AppContent />
       </UserProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
