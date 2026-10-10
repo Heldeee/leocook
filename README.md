@@ -2,6 +2,14 @@
 
 Front React + MUI hébergé sur GitHub Pages. Le catalogue est stocké dans public/data/catalogue.json : aucune base Supabase, aucun compte utilisateur et aucune famille ne sont nécessaires pour utiliser l’app.
 
+## Source Google Sheets
+
+La lecture d’un catalogue Google Sheets est disponible via une application Web Apps Script en lecture seule. Suivre le [guide de configuration Google Sheets](docs/google-sheets-setup.md) : créer un tableur privé, coller `google-apps-script/Code.gs`, exécuter `initialiserKousine` pour importer les recettes, puis déployer l’application Web en accès anonyme. Tester l’URL `/exec` depuis **Catalogue → Source des recettes**.
+
+Pour tous les visiteurs, renseigner cette URL dans `public/data/source.json` et publier la configuration une fois. Les ajouts suivants se font dans Sheets sans modifier GitHub. Tant que cette URL est vide, le site conserve son catalogue JSON. Une panne Google déclenche un secours JSON avec un avertissement ; cette copie de secours n’est pas automatiquement synchronisée.
+
+En mode Sheets, le formulaire de l’app reste un outil de brouillon/export ; il n’écrit pas dans le tableur et la publication GitHub est désactivée. Un autre chat connecté à Google Drive peut modifier les trois onglets avec les droits de ton compte : le guide contient une consigne d’ajout réutilisable.
+
 ## Démarrer
 
 Node.js 24 et les dépendances du projet :

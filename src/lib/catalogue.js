@@ -1,5 +1,6 @@
 const DRAFT_KEY = 'leocook.catalogue-draft.v1'
 const PERSONAL_KEY = 'leocook.personal.v1'
+const SHEETS_URL_KEY = 'leocook.sheets-url.v1'
 const TABLES = ['recipes', 'ingredients', 'units', 'tags', 'recipe_ingredients', 'recipe_steps', 'recipe_tags']
 let published
 let draft
@@ -8,6 +9,29 @@ let loading
 const listeners = new Set()
 const clone = value => structuredClone(value)
 const notify = () => listeners.forEach(listener => listener())
+let source = { mode: 'json', url: '', fallback: false, warning: '', staleDraft: false }
+export const getCatalogueSource = () => ({ ...source })
+export function validateSheetsUrl(value) {
+  const url = value.trim()
+  if (!/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(url)) throw new Error('Utilise l’URL de déploiement Apps Script : https://script.google.com/macros/s/…/exec (pas /dev).')
+  return url
+}
+async function fetchJson(url, timeout = 8000) {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeout)
+  try {
+    const response = await fetch(url, { signal: controller.signal, cache: 'no-store', credentials: 'omit' })
+    if (!response.ok) throw new Error('Réponse indisponible.')
+    return await response.json()
+  } finally { clearTimeout(timer) }
+}
+export async function testSheetsConnection(url) {
+  const data = await fetchJson(validateSheetsUrl(url))
+  if (data.error) throw new Error(data.error)
+  return validateCatalogue(data)
+}
+export function saveSheetsOverride(url) { localStorage.setItem(SHEETS_URL_KEY, validateSheetsUrl(url)) }
+export function clearSheetsOverride() { localStorage.removeItem(SHEETS_URL_KEY) }
 
 export function validateCatalogue(value) {
   if (value?.version !== 1 || TABLES.some(table => !Array.isArray(value[table]))) throw new Error('Format de catalogue invalide.')
@@ -41,14 +65,31 @@ export function validateCatalogue(value) {
 
 export async function loadCatalogue() {
   if (!loading) loading = (async () => {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/catalogue.json`)
-    if (!response.ok) throw new Error('Impossible de charger le catalogue.')
-    published = validateCatalogue(await response.json())
+    let url = localStorage.getItem(SHEETS_URL_KEY)
+    source = { mode: 'json', url: '', fallback: false, warning: '', staleDraft: false }
+    if (!url) {
+      try {
+        const config = await fetchJson(`${import.meta.env.BASE_URL}data/source.json`, 3000)
+        url = config.googleSheetsUrl ?? ''
+        if (typeof url !== 'string') { url = ''; throw new Error('Configuration invalide.') }
+      }
+      catch { source.warning = 'Configuration inaccessible : le catalogue JSON est utilisé.' }
+    }
+    if (url) {
+      source.mode = 'sheets'; source.url = url
+      try { published = await testSheetsConnection(url) }
+      catch {
+        source.fallback = true
+        source.warning = 'Google Sheets est indisponible ou invalide. La copie JSON de secours est affichée ; elle peut être moins récente.'
+      }
+    }
+    if (!url || source.fallback) published = validateCatalogue(await fetchJson(`${import.meta.env.BASE_URL}data/catalogue.json`))
     const saved = localStorage.getItem(DRAFT_KEY)
     if (saved) {
       const stored = JSON.parse(saved)
       draft = validateCatalogue(stored.catalogue)
       draftBase = validateCatalogue(stored.base)
+      source.staleDraft = source.mode === 'sheets' && JSON.stringify(draftBase) !== JSON.stringify(published)
     }
     return published
   })().catch(error => { loading = undefined; throw error })
@@ -58,10 +99,11 @@ export async function loadCatalogue() {
 export const subscribeCatalogue = listener => { listeners.add(listener); return () => listeners.delete(listener) }
 export const hasDraft = () => !!draft
 export const exportCatalogue = () => JSON.stringify(draft ?? published, null, 2) + '\n'
-export function discardDraft() { localStorage.removeItem(DRAFT_KEY); draft = undefined; draftBase = undefined; notify() }
+export function discardDraft() { localStorage.removeItem(DRAFT_KEY); draft = undefined; draftBase = undefined; source.staleDraft = false; notify() }
 
-async function current() { await loadCatalogue(); return draft ?? published }
+async function current() { await loadCatalogue(); return source.staleDraft ? published : (draft ?? published) }
 function persist(value) {
+  if (source.staleDraft) throw new Error('Ton ancien brouillon ne correspond plus au catalogue. Exporte-le depuis Catalogue, puis abandonne-le avant de reprendre l’édition.')
   validateCatalogue(value)
   // Persist before changing in-memory data: storage failures must not claim success.
   const base = draftBase ?? published
@@ -173,6 +215,7 @@ export async function personalRecipes(history = false) {
 
 export async function publishCatalogue({ token, repository, branch }) {
   await loadCatalogue()
+  if (source.mode === 'sheets') throw new Error('Le catalogue est géré dans Google Sheets. Modifie le tableur ; publier le JSON GitHub ne mettrait pas Sheets à jour.')
   if (!draft) throw new Error('Aucun brouillon à publier.')
   if (!/^[\w.-]+\/[\w.-]+$/.test(repository) || !branch.trim() || !token.trim()) throw new Error('Renseigne le dépôt, la branche et ton token GitHub.')
   const snapshot = clone(draft)

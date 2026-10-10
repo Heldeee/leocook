@@ -13,7 +13,7 @@
     "cypress:run": "cypress run",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -b gh-pages",
-    "test": "node --test --test-isolation=none tests/catalogue.test.mjs",
+    "test": "node --test --test-isolation=none tests/catalogue.test.mjs tests/google-sheets.test.mjs",
     "import:backup": "node scripts/import-backup.mjs",
     "catalogue:enrich": "node scripts/enrich-catalogue.mjs"
   },

@@ -141,3 +141,46 @@ test('deadline timer handles background delay without interval drift or negative
   assert.equal(secondsRemaining(60_000, 70_000), 0)
   assert.equal(clockLabel(62), '01:02')
 })
+
+const sheetsUrl = 'https://script.google.com/macros/s/test-deployment/exec'
+test('configured Sheets source loads live catalogue and prevents misleading GitHub publication', async () => {
+  const api = await service()
+  const live = structuredClone(original); live.recipes[0].name = 'Recette depuis Sheets'
+  globalThis.fetch = async url => ({ ok: true, json: async () => url.endsWith('source.json') ? { googleSheetsUrl: sheetsUrl } : live })
+  await api.loadCatalogue()
+  assert.equal(api.getCatalogueSource().mode, 'sheets')
+  assert.equal((await api.listRecipes('depuis sheets')).length, 1)
+  await assert.rejects(api.publishCatalogue({}), /géré dans Google Sheets/)
+})
+test('remote failure or invalid catalogue uses explicit JSON fallback', async () => {
+  const api = await service()
+  globalThis.fetch = async url => ({ ok: true, json: async () => url.endsWith('source.json') ? { googleSheetsUrl: sheetsUrl } : url === sheetsUrl ? { error: 'Invalid sheet' } : original })
+  await api.loadCatalogue()
+  assert.equal(api.getCatalogueSource().fallback, true)
+  assert.match(api.getCatalogueSource().warning, /secours/)
+  assert.equal((await api.listRecipes()).length, original.recipes.length)
+})
+test('connection accepts only public /exec endpoints, local override and removal work', async () => {
+  const api = await service()
+  for (const url of ['http://script.google.com/macros/s/x/exec', 'https://evil.example/exec', 'https://script.google.com/macros/s/x/dev', 'https://script.google.com.evil.example/macros/s/x/exec']) assert.throws(() => api.validateSheetsUrl(url), /URL/)
+  api.saveSheetsOverride(sheetsUrl)
+  assert.equal(stored.get('leocook.sheets-url.v1'), sheetsUrl)
+  assert.equal((await api.testSheetsConnection(sheetsUrl)).recipes.length, original.recipes.length)
+  api.clearSheetsOverride()
+  assert.equal(stored.has('leocook.sheets-url.v1'), false)
+})
+test('old JSON draft survives migration but cannot hide or overwrite new Sheets data', async () => {
+  let api = await service()
+  await api.saveRecipe(preview(original.units[0].id))
+  api = await service()
+  const live = structuredClone(original); live.recipes[0].name = 'Nouvelle source Sheets'
+  stored.set('leocook.sheets-url.v1', sheetsUrl)
+  globalThis.fetch = async () => ({ ok: true, json: async () => live })
+  await api.loadCatalogue()
+  assert.equal(api.getCatalogueSource().staleDraft, true)
+  assert.equal((await api.listRecipes('Nouvelle source')).length, 1)
+  assert.match(api.exportCatalogue(), /Crêpes/)
+  await assert.rejects(api.saveRecipe(preview(original.units[0].id)), /ancien brouillon/)
+  api.discardDraft()
+  assert.equal(api.getCatalogueSource().staleDraft, false)
+})
